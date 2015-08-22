@@ -143,31 +143,21 @@
 
 		<div class="search-form-body">
 			<form action="/echo">
-				
-				<!-- Обернул в label input, чтобы не было for -->
-				<label>Дата заезда
-					<!-- Тут не работает не value, ни placeholder, почемуто
-						браузер рисует дд.мм.гг -->
-					<input type="date" name="date-enter" value="24 апреля 2014"
-						placeholder="24 апреля 2014">
-				</label>
+				<label for="date-enter-id">Дата заезда</label>
+				<input type="date" name="date-enter" 
+					id="date-enter-id" value="24 апреля 2014"
+					placeholder="24 апреля 2014">
 				<br>
 
-				<label >
-					Дата выезда
-					<input type="date" name="date-exit" value="24 апреля 2014">
-				</label>
+				<label for="date-exit-id">Дата выезда</label>
+				<input type="date" name="date-exit" id="date-exit-id" value="24 апреля 2014">
 				<br>
 
 				<!-- Тут я кнопки + -  не размечал. Или надо? -->
-				<label>
-					Взрослые
-					<input type="number" name="adults" value="2">
-				</label>
-				<label>
-					Дети
-					<input type="number" name="children" id="children-id" value="0">
-				</label>
+				<label for="adults-id">Взрослые</label>
+				<input type="number" name="adults" id="adults-id" value="2">
+				<label for="children-id">Дети</label>
+				<input type="number" name="children" id="children-id" value="0">
 				<br>
 
 				<input type="submit" value="Найти">
