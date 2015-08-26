@@ -8,9 +8,8 @@
 </head>
 
 <body>
-    <!-- wrapper -->
-    <header class="main-header">
-        <!-- <div class="container clearfix"> -->
+    <div class="wrapper">
+        <header class="main-header">
             <nav class="main-navigation">
                 <ul>
                     <li><a href="#" class="pull-left">Информация</a></li>
@@ -18,161 +17,155 @@
                     <li><a href="#" class="pull-right">Карта штата</a></li>
                     <li><a href="#" class="pull-right">Контакты</a></li>
                     <!--!! при использовании обтекания справа порядок элементов должен быть обратным !!-->
+                    <!-- Будут стили - разберусь -->
                 </ul>
             </nav>
             <div class="top-logo">
                 <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
             </div>
-        <!-- </div> -->
-    </header>
-    <!-- Этот блок вызвал сомнение. Тут же в макете не шрифты, а фоновые картинки с надписями. Значит надо дивами размечать? Или абзацами? Или картинками? Или одной картинкой для всех надписей?? -->
-    <!--!! Все надписи разными шрифтами - это точно одна картинка. Я бы делал выбор из двух вариантов: либо еще одна маска для этого блока, либо картинка с margin: 0 auto;  !!-->
-    <div class="intro">
-        <div class="welcome"></div>
-        <div class="to-the-gorgeouse"></div>
-        <div class="sedona"></div>
-        <div class="quot"></div>
-        <figure class="shaped-bottom-border">
-            <!--Нужен здесь этот тег или img достаточно?-->
-            <img src="img/shaped-bottom-border" alt="Горы Седоны" height="80" width="296">
-        </figure>
-        <!--!! Если делаешь резиновый блок, то я бы вообще изображение запихнул в фон. Это более правильно - блок имеет фикс высоту, а показывается лишь та часть изображения, которая вмещается !!-->
-    </div>
+        </header>
+    
+        <div class="start-img">
+           <!-- В "резиновой" sedona-index-768.psd все блоки текста на слое Guides (красном) помечены фиксированным размером. Так что может отдельно задать для них три дива, с фоновыми картинками-надписями, а основную картинку с горами поставить на фон дива-родителя.start-img? И рамку нижнюю маской добавить  -->
+           <div class="start-text-welcome"></div> 
+           <div class="start-text-sedona"></div>
+           <div class="start-text-because"></div>        
+           
+        </div>
 
-    <!-- <main> ? -->
-    <!--!! Вполне !!-->    
-    <div class="mainpage-content">
+          
+        <main class="mainpage-content">
 
-        <!-- div.container? -->
-        <!--!! У тебя сайт весь находится в контейнере, поэтому отдельный блок делать не нужно. Ты будешь оперировать только "строчками" внутри ширины контента !!-->
+            <section class="intro"> 
+                <h3 class="intro-title">Седона - небольшой городок в Аризоне, заслуживающий большего</h3>
+                <p>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</p>
+            </section>
 
-        <section class="intro"> <!--!! Еще один intro? o_O !!-->
-            <div class="intro-title">Седона - небольшой городок в Аризоне, заслуживающий большего</div>
-            <p>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</p>
-        </section>
+            <section class="landscape">
+                <div class="lanscape-description pull-left">
+                    <h3 class="description-title">Настоящий городок</h3>
+                    <p><span class="centerred"> - №1 - </span> Седона не атракцион для туристов, там течёт своя жизнь</p>
+                </div>
+                <div class="lanscape-picture">
+                    <!-- А здесь фоном картинка будет? Она же обрезаться должна -->
+                </div>
+    			
+            </section>
 
-        <!--Может figure надо разметить? Тут же картинка и подпись к ней  -->
-        <!--!! Здесь фигура не подойдет !!-->
-        <section class="landscape-1">
-            <div class="lanscape-1-description pull-left">
-                <div class="description-title">Настоящий городок</div>
-                <p><span class="centerred"> - №1 - </span> Седона не атракцион для туристов, там течёт своя жизнь</p>
-            </div>
-            <div class="lanscape-1-picture">
-                <img src="img/lanscape-1-picture.png" height="256" width="512" alt="Домик с флагами">
-            </div>
-			<!--!! Заметь схожесть landscape-1 и landscape-2. Разница только в том, что в одном картинка слева, в другом - справа. Ты можешь сделать два абсолютно одинаковых, с точки зрения разметки, блока. Второму ты просто дашь еще один класс, в котором укажешь, что блок с текстом теперь флоатится вправо. + судя по ТЗ к макету, изображение будет фоновым !!-->
-        </section>
-
-        <section class="features-1 clearfix"><!--!! Зачем features-1 и features-2? Что они тебе дают? !!-->
-            <div class="features-item">
-                <!-- Или не надо эти картинки отдельным тегом размечать? 
-				Нет смысловой нагрузки -> :before ? -->
-				<!--!! Смысловая нагрузка есть. Ты замучаешься каждому элементу прописывать before !!-->
-                <img src="img/features-home.png" alt="Домик" class="features-picture" height="76" width="64">
-                <div class="features-title">Жильё</div>
+            <section class="features">
+                <div class="features-item">
+                    <img src="img/features-home.png" alt="Домик" class="features-picture" height="76" width="64">
+                <h3 class="features-title">Жильё</h3>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
-            </div>
-            <div class="features-item">
-                <img src="img/feature-sandwich.png" alt="Бутербродик" class="features-picture" height="76" width="64">
-                <div class="features-title">Еда</div>
-                <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-            </div>
-            <div class="features-item">
-                <img src="img/feature-present.png" alt="Подарочек" class="features-picture" height="76" width="64">
-                <div class="features-title">Сувениры</div>
-                <p>Не только китайского, но и местного производства!</p>
-            </div>
-        </section>
-        <section class="landscape-2">
-            <div class="lanscape-2-picture pull-left">
-                <img src="img/lanscape-2-picture.png" height="256" width="512" alt="Каньон">
-            </div>
-            <div class="lanscape-2-description">
-                <div class="description-title">Там есть мост дьявола</div>
-                <p><span class="centerred"> - №2 - </span> Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-            </div>
-        </section>
-        <section class="features-2">
-            <div class="feature-item">
-                <div class="features-title">Небольшая площадь</div>
-                <p><span class="centerred"> - №3 - </span>Все достопримечательности находятся очень близко</p>
-            </div>
-            <div class="feature-item">
-                <div class="features-title">Красивая дорога</div>
-                <p><span class="centerred"> - №4 - </span>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-            </div>
-            <div class="feature-item">
-                <div class="features-title">Мало туристов</div>
-                <p><span class="centerred"> - №5 - </span>Большинство едет в Гранд Каньон и толпится там</p>
-            </div>
-        </section>
-    </div>
-    <!-- Тут форма поиска в макете вынесена в отдельную секцию. 
-	Значит и в разметке не должна входить в  mainpage-content?-->
-	<!--!! И так, и так можно !!-->
-    <section class="search-form">
-        <div class="search-form-title">
-            <h2>Заинтересовались?</h2>
-            <!-- h2? или div.title? -->
-            <!--!! И так, и так можно. Я бы выбрал h2 !!-->
+                </div>
+                <div class="features-item">
+                    <img src="img/feature-sandwich.png" alt="Бутербродик" class="features-picture" height="76" width="64">
+                    <h3 class="features-title">Еда</h3>
+                    <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+                </div>
+                <div class="features-item">
+                    <img src="img/feature-present.png" alt="Подарочек" class="features-picture" height="76" width="64">
+                    <h3 class="features-title">Сувениры</h3>
+                    <p>Не только китайского, но и местного производства!</p>
+                </div>
+            </section>
 
-            <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-            <div>Поиск гостиницы в Седоне</div>
-            <!-- Какой тут класс влепить??? -->
-            <!--!! .search-form-call !!-->
-        </div>
-        <div class="search-form-body">
-            <form action="/echo">
-                <!-- Обернул в label input, чтобы не было for -->
-                <label>Дата заезда
-                    <!-- Тут не работает не value, ни placeholder, почемуто
-						браузер рисует дд.мм.гг -->
-                    <input type="date" name="date-enter" value="24 апреля 2014" placeholder="24 апреля 2014">
-                </label>
-                <!--!!  
-					1. претензии по логике html такие же, как и в барбершопе
-					2. инпут-дата вообще ведёт себя по-разному в разных браузерах. Поэтому лучше использовать обычный type=text
-					3. желательно все-таки сделать конструкцию .form-row>.form-group>(label+(.form-input>(input+span)) - для стилизации пригодится. К инпуту ты особо не приделаешь before, также у тебя ниже будет разделение на 2 блока в строке. А там подобная конструкция пригодится своей гибкостью + можно еще один спан добавить, чтобы и плюс и минус были
-                !!-->
-                <br>
-                <label>
-                    Дата выезда
-                    <input type="date" name="date-exit" value="24 апреля 2014">
-                </label>
-                <br>
-                <!-- Тут я кнопки + -  не размечал. Или надо? -->
-                <label>
-                    Взрослые
-                    <input type="number" name="adults" value="2">
-                </label>
-                <label>
-                    Дети
-                    <input type="number" name="children" id="children-id" value="0">
-                </label>
-                <br>
-                <input type="submit" value="Найти">
-            </form>
-        </div>
-    </section>
-    <footer class="main-footer">
-        <div class="container clearfix">
-            <section class="footer-hashtag">
-                <h2>#visitsedona</h2>
+            <section class="landscape-inverse">
+                <div class="lanscape-description">
+                    <h3 class="description-title">Там есть мост дьявола</h3>
+                    <p><span class="centerred"> - №2 - </span> Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+                </div>
+                <div class="lanscape-picture pull-left">
+                    <!-- Картинка фоном -->
+                </div>
             </section>
-            <section class="footer-socials">
-                <a href="#" class="social-btn social-btn-tw">Вконтакте</a>
-                <a href="#" class="social-btn social-btn-fb">Фейсбук</a>
-                <a href="#" class="social-btn social-btn-yt">Ютуб</a>
+
+            <section class="features">
+                <div class="feature-item">
+                    <h3 class="features-title">Небольшая площадь</h3>
+                    <p><span class="centerred"> - №3 - </span>Все достопримечательности находятся очень близко</p>
+                </div>
+                <div class="feature-item">
+                    <h3 class="features-title">Красивая дорога</h3>
+                    <p><span class="centerred"> - №4 - </span>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+                </div>
+                <div class="feature-item">
+                    <h3 class="features-title">Мало туристов</h3>
+                    <p><span class="centerred"> - №5 - </span>Большинство едет в Гранд Каньон и толпится там</p>
+                </div>
             </section>
-            <section class="footer-copyright">
-                <p>website by</p>
-                <a href="https://htmlacademy.ru">
-                    <img src="img/HTMLAcademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
-                </a>
+        
+            <section class="search-form">
+                <div class="search-form-title">
+                    <h2>Заинтересовались?</h2>
+                    <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+                    <div class="search-form-call">Поиск гостиницы в Седоне</div>
+                </div>
+
+                <div class="search-form-body">
+                    <form action="https://echo.htmlacademy.ru" method="get">
+                        <div class="form-row"> <!-- Для каждой строчки-->
+                            <div class="form-input">
+                                <label>
+                                    <span class="form-descript">Дата заезда</span>
+                                    <input type="text" name="date-enter"  placeholder="24 апреля 2014">
+                                    <span class="form-icon-calend"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-input">
+                                <label>
+                                    <span class="form-descript">Дата выезда</span>
+                                    <input type="text" name="date-exit" placeholder="4 июля 2014">
+                                    <span class="form-icon-calend"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-row-half">
+                                <div class="form-input">
+                                    <span class="form-icon-plus">+</span>
+                                    <label>Взрослые</label>
+                                    <input type="number" name="adults" value="2">
+                                    <span class="form-icon-minus">-</span>
+                                </div>
+                            </div>
+                            <div class="form-row-half">    
+                                <div class="form-input">
+                                    <span class="form-icon-plus">+</span>
+                                    <label>Дети</label>
+                                    <input type="number" name="children" id="children-id" value="0">
+                                    <span class="form-icon-minus">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-call"><input type="submit" value="Найти"></div>
+                    </form>
+                </div>
             </section>
-        </div>
-    </footer>
+        </main>
+        <footer class="main-footer">
+            <div class="container clearfix">
+                <section class="footer-hashtag">
+                    <h2>#visitsedona</h2>
+                </section>
+                <section class="footer-socials">
+                    <a href="#" class="social-btn social-btn-tw">Вконтакте</a>
+                    <a href="#" class="social-btn social-btn-fb">Фейсбук</a>
+                    <a href="#" class="social-btn social-btn-yt">Ютуб</a>
+                </section>
+                <section class="footer-copyright">
+                    <p>website by</p>
+                    <a href="https://htmlacademy.ru">
+                        <img src="img/HTMLAcademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
+                    </a>
+                </section>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
