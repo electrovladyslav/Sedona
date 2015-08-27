@@ -11,48 +11,53 @@
     <header class="main-header">
         <div class="container clearfix">
             <nav class="main-navigation">
-                <ul>
-                    <li><a href="#" class="pull-left">Информация</a></li>
-                    <li><a href="#" class="pull-left">Фото и видео</a></li>
-                    <li><a href="#" class="pull-right">Карта штата</a></li>
-                    <li><a href="#" class="pull-right">Контакты</a></li>
+                 <ul>
+                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Информация</a></li>
+                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
+                    <li class="main-nav-li pull-right"><a href="#" class="pull-right">Контакты</a></li>
+                    <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
+                   
+                    <!--!! при использовании обтекания справа порядок элементов должен быть обратным !!-->
+                    <!-- Поправил -->
                 </ul>
             </nav>
             <div class="top-logo">
-                <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
+                <a href="index.html" alt="Главная">
+                    <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
+                </a>
             </div>
         </div>
     </header>
-    <!-- <main>? -->
     <main class="hotels-content">
-        <!-- <section>? -->
+        
+        <!-- Поправил форму, дал имена и значения -->
         <article class="hotels-filter">
-            <form action="/echo" method="post">
+            <form action="https://echo.htmlacademy.ru" method="post">
                 <div class="filter-column-left">
-                    <h2>Инфраструктура:</h2>
+                    <h2 class="filter-title">Инфраструктура:</h2>
                     <label>
-                        <input type="checkbox" checked>Бассейн</label>
+                        <input type="checkbox" name="infrastructure" value="pool" checked>Бассейн</label>
                     <label>
-                        <input type="checkbox">Парковка</label>
+                        <input type="checkbox" name="infrastructure" value="parking">Парковка</label>
                     <label>
-                        <input type="checkbox">Wi-Fi</label>
+                        <input type="checkbox" name="infrastructure" value="wifi">Wi-Fi</label>
                 </div>
                 <div class="filter-column-center">
-                    <h2>Инфраструктура:</h2>
+                    <h2 class="filter-title">Тип жилья:</h2>
                     <label>
-                        <input type="checkbox" checked>Гостиница</label>
+                        <input type="checkbox" name="type" value="hotel" checked>Гостиница</label>
                     <label>
-                        <input type="checkbox" checked>Мотель</label>
+                        <input type="checkbox" name="type" value="motel" checked>Мотель</label>
                     <label>
-                        <input type="checkbox" checked>Апартаменты</label>
+                        <input type="checkbox" name="type" value="appartment" checked>Апартаменты</label>
                 </div>
                 <div class="filter-column-right">
-                    <h2>Стоимость в сутки(р):</h2>
+                    <h2  class="filter-title">Стоимость в сутки(р):</h2>
                     <label>От
-                        <input type="number" value="0">
+                        <input type="number" name="start-price"  value="0">
                     </label>
                     <label>До
-                        <input type="number" value="3000">
+                        <input type="number" name="finish-price" value="3000">
                     </label>
                     <div class="filter-scrollbar"></div>
                     <input type="submit" class="filter-btn" value="Показать">
@@ -93,7 +98,8 @@
                         </p>
                         <div class="item-btns">
                             <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <button class="item-btn">Забронировать</button>
+                            <!-- Я так понял, что Забронировать тоже лучше ссылкой разметить, а не кнопкой  -->
+                            <a href="#" class="item-btn">Забронировать</a>
                         </div>
                     </div>
 
@@ -124,7 +130,7 @@
                         </p>
                         <div class="item-btns">
                             <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <button class="item-btn">Забронировать</button>
+                            <a href="#" class="item-btn">Забронировать</a>
                         </div>
                     </div>
 
@@ -149,7 +155,7 @@
                         </p>
                         <div class="item-btns">
                             <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <button class="item-btn">Забронировать</button>
+                            <a href="#" class="item-btn">Забронировать</a>
                         </div>
                     </div>
 
@@ -175,7 +181,7 @@
             <section class="footer-copyright">
                 <p>website by</p>
                 <a href="https://htmlacademy.ru">
-                    <img src="img/HTMLAcademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
+                    <img src="img/htmlacademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
                 </a>
             </section>
         </div>
