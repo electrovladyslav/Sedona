@@ -16,9 +16,6 @@
                     <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
                     <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right">Гостиницы</a></li>
                     <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
-                   
-                    <!--!! при использовании обтекания справа порядок элементов должен быть обратным !!-->
-                    <!-- Поправил -->
                 </ul>
             </nav>
             <div class="top-logo">
@@ -30,26 +27,39 @@
     </header>
     <main class="hotels-content">
         
-        <!-- Поправил форму, дал имена и значения -->
+        <!-- структура барбершопа -->
         <article class="hotels-filter">
-            <form action="https://echo.htmlacademy.ru" method="post">
+            <form action="https://echo.htmlacademy.ru" method="get">
                 <div class="filter-column-left">
                     <h2 class="filter-title">Инфраструктура:</h2>
                     <label>
-                        <input type="checkbox" name="infrastructure" value="pool" checked>Бассейн</label>
+                        <input type="checkbox" name="infrastructure[]" value="pool" checked>
+                        <span class="filter-text">Бассейн</span>
+                    </label>
                     <label>
-                        <input type="checkbox" name="infrastructure" value="parking">Парковка</label>
+                        <input type="checkbox" name="infrastructure[]" value="parking">
+                        <span class="filter-text">Парковка</span>
+                    </label>
                     <label>
-                        <input type="checkbox" name="infrastructure" value="wifi">Wi-Fi</label>
+                        <input type="checkbox" name="infrastructure[]" value="wifi">
+                        <span class="filter-text">Wi-Fi</span>
+                    </label>
                 </div>
+                <!-- они идентичны, эти две колонки, кстати -->
                 <div class="filter-column-center">
                     <h2 class="filter-title">Тип жилья:</h2>
                     <label>
-                        <input type="checkbox" name="type" value="hotel" checked>Гостиница</label>
+                        <input type="checkbox" name="type[]" value="hotel" checked>
+                        <span class="filter-text">Гостиница</span>
+                    </label>
                     <label>
-                        <input type="checkbox" name="type" value="motel" checked>Мотель</label>
+                        <input type="checkbox" name="type[]" value="motel" checked>
+                        <span class="filter-text">Мотель</span>
+                    </label>
                     <label>
-                        <input type="checkbox" name="type" value="appartment" checked>Апартаменты</label>
+                        <input type="checkbox" name="type[]" value="appartment" checked>
+                        <span class="filter-text">Апартаменты</span>
+                    </label>
                 </div>
                 <div class="filter-column-right">
                     <h2  class="filter-title">Стоимость в сутки(р):</h2>
@@ -68,10 +78,10 @@
         </article>
 
         <article class="hotels-results">
-            <section class="results-sort clearfix">
+            <section class="results-sort">
                 <div class="results-found">Найдено:<span class="found-amount">3</span></div>
                 <div class="results-sorting">
-                    Сортировка:
+                    <span class="sorting-title">Сортировка:</span>
                     <a href="#" class="sorting-price btn active"> По цене</a>
                     <a href="#" class="sorting-type btn">По типу</a>
                     <a href="#" class="sorting-rating btn">По рейтингу</a>
@@ -86,7 +96,7 @@
                 <div class="results-item">
                     <div class="item-img">
                         <a href="#" title="Подробнее">
-                            <img src="img/amara-preview.png" class="pull-left" alt="Amara-preview" height="90" width="135">
+                            <img src="img/amara-preview.jpg" class="pull-left" alt="Amara-preview" height="90" width="135">
                         </a>
                     </div>
 
@@ -97,9 +107,8 @@
                             <span class="item-price">От 3500р.</span>
                         </p>
                         <div class="item-btns">
-                            <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <!-- Я так понял, что Забронировать тоже лучше ссылкой разметить, а не кнопкой  -->
-                            <a href="#" class="item-btn">Забронировать</a>
+                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                            <a href="#" class="item-order item-btn">Забронировать</a>
                         </div>
                     </div>
 
@@ -107,18 +116,11 @@
                         <div class="rating-stars stars-5">5</div>
                         <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
                     </div>
-                    <!--!! VV Посмотри на блок слева-направо:
-						1. Сначала идет блок с картинкой
-						2. затем идет блок с инфой
-						3. последний блок со звёздами и рейтингом
-
-						VV  Далее, заметь, что "от" и "Забронировать" начинаются с одного места, соответственно, скорее всего, у item-type и первого item-btn должна быть одинаковая ширина. Может быть это стоит сделать с помощью отдельного класса?
-                     !!-->
                 </div>
                 <div class="results-item">
                     <div class="item-img">
                         <a href="#" title="Подробнее">
-                            <img src="img/desert-preview.png" class="pull-left" alt="Desrt Quail Inn" height="90" width="135">
+                            <img src="img/desert-preview.jpg" class="pull-left" alt="Desrt Quail Inn" height="90" width="135">
                         </a>
                     </div>
 
@@ -129,8 +131,8 @@
                             <span class="item-price">От 2000р.</span>
                         </p>
                         <div class="item-btns">
-                            <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <a href="#" class="item-btn">Забронировать</a>
+                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                            <a href="#" class="item-order item-btn">Забронировать</a>
                         </div>
                     </div>
 
@@ -143,7 +145,7 @@
                 <div class="results-item">
                     <div class="item-img">
                         <a href="#" title="Подробнее">
-                            <img src="img/poco-preview.png" class="pull-left" alt="Poco Diablo preview" height="90" width="135">
+                            <img src="img/poco-preview.jpg" class="pull-left" alt="Poco Diablo preview" height="90" width="135">
                         </a>
                     </div>
 
@@ -154,8 +156,8 @@
                             <span class="item-price">От 4000р.</span>
                         </p>
                         <div class="item-btns">
-                            <a href="#" class="item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <a href="#" class="item-btn">Забронировать</a>
+                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                            <a href="#" class="item-order item-btn">Забронировать</a>
                         </div>
                     </div>
 

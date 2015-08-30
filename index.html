@@ -16,9 +16,6 @@
                     <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
                     <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right">Гостиницы</a></li>
                     <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
-                   
-                    <!--!! при использовании обтекания справа порядок элементов должен быть обратным !!-->
-                    <!-- Поправил -->
                 </ul>
             </nav>
             <div class="top-logo">
@@ -29,11 +26,7 @@
         </header>
     
         <div class="start-img">
-           <!-- В "резиновой" sedona-index-768.psd все блоки текста на слое Guides (красном) помечены фиксированным размером. Так что может отдельно задать для них три дива, с фоновыми картинками-надписями, а основную картинку с горами поставить на фон дива-родителя.start-img? И рамку нижнюю маской добавить  -->
-           <div class="start-text-welcome"></div> 
-           <div class="start-text-sedona"></div>
-           <div class="start-text-because"></div>        
-           
+           <!-- слил в один слой, 3 варианта, потом можно будет выбрать -->
         </div>
 
           
@@ -43,57 +36,57 @@
                 <h1 class="intro-title">Седона - небольшой городок в Аризоне, заслуживающий большего</h1>
                 <p>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон</p>
             </section>
+            <!-- 1. landscape1, 2  
+                2. убрать pull-left-->
+            <!-- поправил -->
 
-            <section class="landscape">
-                <div class="landscape-description pull-left">
+            <section class="landscape-1">
+                <div class="landscape-description">
                     <h2 class="landscape-title">Настоящий городок</h2>
                     <p><span class="centerred"> - №1 - </span> Седона не атракцион для туристов, там течёт своя жизнь</p>
                 </div>
                 <div class="landscape-picture">
-                    <!-- А здесь фоном картинка будет? Она же обрезаться должна -->
                 </div>
-    			
             </section>
 
             <section class="features">
                 <div class="features-item">
                     <img src="img/features-home.png" alt="Домик" class="features-picture" width="72" height="75" >
-                <h3 class="features-title">Жильё</h3>
+                <h2 class="features-title">Жильё</h2>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
                 </div>
                 <div class="features-item">
                     <img src="img/feature-sandwich.png" alt="Бутербродик" class="features-picture" height="76" width="74">
-                    <h3 class="features-title">Еда</h3>
+                    <h2 class="features-title">Еда</h2>
                     <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
                 </div>
                 <div class="features-item">
                     <img src="img/feature-present.png" alt="Подарочек" class="features-picture" height="76" width="64">
-                    <h3 class="features-title">Сувениры</h3>
+                    <h2 class="features-title">Сувениры</h2>
                     <p>Не только китайского, но и местного производства!</p>
                 </div>
             </section>
 
-            <section class="landscape landscape-inverse">
+            <section class="landscape-2 landscape-inverse">
                 <div class="lanscape-description">
                     <h2 class="landscape-title">Там есть мост дьявола</h2>
                     <p><span class="centerred"> - №2 - </span> Да, по нему можно пройти! Если конечно вы осмелитесь</p>
                 </div>
-                <div class="lanscape-picture pull-left">
-                    <!-- Картинка фоном -->
+                <div class="lanscape-picture">
                 </div>
             </section>
 
             <section class="features">
                 <div class="feature-item">
-                    <h3 class="features-title">Небольшая площадь</h3>
+                    <h2 class="features-title">Небольшая площадь</h2>
                     <p><span class="centerred"> - №3 - </span>Все достопримечательности находятся очень близко</p>
                 </div>
                 <div class="feature-item">
-                    <h3 class="features-title">Красивая дорога</h3>
+                    <h2 class="features-title">Красивая дорога</h2>
                     <p><span class="centerred"> - №4 - </span>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
                 </div>
                 <div class="feature-item">
-                    <h3 class="features-title">Мало туристов</h3>
+                    <h2 class="features-title">Мало туристов</h2>
                     <p><span class="centerred"> - №5 - </span>Большинство едет в Гранд Каньон и толпится там</p>
                 </div>
             </section>
@@ -102,51 +95,55 @@
                 <div class="search-form-title">
                     <h2 class="search-title">Заинтересовались?</h2>
                     <p>Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-                    <div class="search-form-call">Поиск гостиницы в Седоне</div>
-                </div>
-
-                <div class="search-form-body">
-                    <form action="https://echo.htmlacademy.ru" method="get">
-                        <div class="form-row"> <!-- Для каждой строчки-->
-                            <div class="form-input">
-                                <label>
-                                    <span class="form-descript">Дата заезда</span>
-                                    <input type="text" name="date-enter"  placeholder="24 апреля 2014">
-                                    <span class="form-icon-calend"></span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-input">
-                                <label>
-                                    <span class="form-descript">Дата выезда</span>
-                                    <input type="text" name="date-exit" placeholder="4 июля 2014">
-                                    <span class="form-icon-calend"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-row-half">
+                </div> 
+                <!-- Тут сделал обёртку для кнопки и всей выпадающей формы  -->
+                <div class="search-form-block">
+                    <a href="#" title="Ввести даты" class="search-form-call btn">Поиск гостиницы в Седоне</a>
+                    
+                    <div class="search-form-body">
+                        <form action="https://echo.htmlacademy.ru" method="get">
+                            <div class="form-row">
+                                <label for="date-enter-id" class="form-descript">Дата заезда</label>
+                                <!-- div.input>(input+icon) -->
+                                <!-- Вот так? Обернуть инпут и иконку в див? А можно внутрь лэйбла див ставить? может тогда спан на лэйбл заменить, и по id связать, вот так? -->
                                 <div class="form-input">
-                                    <span class="form-icon-plus">+</span>
-                                    <label>Взрослые</label>
-                                    <input type="number" name="adults" value="2">
-                                    <span class="form-icon-minus">-</span>
+                                    <input type="text" name="date-enter" id="date-enter-id" placeholder="24 апреля 2014">
+                                    <span class="form-icon-calend"></span>
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-row">
+                                <label class="form-descript" for="date-enter-id">Дата выезда</label>
+                                <div class="form-input">
+                                    <input type="text" name="date-exit" id="date-enter-id" placeholder="4 июля 2014">
+                                    <span class="form-icon-calend"></span>
                                 </div>
                             </div>
-                            <div class="form-row-half">    
-                                <div class="form-input">
-                                    <span class="form-icon-plus">+</span>
-                                    <label>Дети</label>
-                                    <input type="number" name="children" id="children-id" value="0">
-                                    <span class="form-icon-minus">-</span>
+                            
+                            <div class="form-row">
+                                <div class="form-row-half">
+                                    <label class="form-descript">Взрослые</label>
+                                    <div class="form-input">
+                                        <span class="form-icon-plus">+</span>
+                                        <input type="number" name="adults" value="2">
+                                        <span class="form-icon-minus">-</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row-half">    
+                                    <label class="form-descript">Дети</label>
+                                    <div class="form-input">
+                                        <span class="form-icon-plus">+</span>
+                                        <input type="number" name="children" id="children-id" value="0">
+                                        <span class="form-icon-minus">-</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="form-call"><input type="submit" value="Найти"></div>
-                    </form>
+                            <div class="form-call"><input type="submit" value="Найти"></div>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>
