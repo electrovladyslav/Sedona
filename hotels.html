@@ -3,18 +3,20 @@
 
 <head>
     <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <title>Отели Седоны</title>
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="container clearfix">
-            <nav class="main-navigation">
-                 <ul>
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="main-navigation clearfix">
+                <ul>
                     <li class="main-nav-li pull-left"><a href="#" class="pull-left">Информация</a></li>
                     <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
-                    <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right">Гостиницы</a></li>
+                    <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right active">Гостиницы</a></li>
                     <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
                 </ul>
             </nav>
@@ -23,171 +25,171 @@
                     <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
                 </a>
             </div>
-        </div>
-    </header>
-    <main class="hotels-content">
-        
-        <!-- структура барбершопа -->
-        <article class="hotels-filter">
-            <form action="https://echo.htmlacademy.ru" method="get">
-                <div class="filter-column-left">
-                    <h2 class="filter-title">Инфраструктура:</h2>
-                    <label>
-                        <input type="checkbox" name="infrastructure[]" value="pool" checked>
-                        <span class="filter-text">Бассейн</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="infrastructure[]" value="parking">
-                        <span class="filter-text">Парковка</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="infrastructure[]" value="wifi">
-                        <span class="filter-text">Wi-Fi</span>
-                    </label>
-                </div>
-                <!-- они идентичны, эти две колонки, кстати -->
-                <div class="filter-column-center">
-                    <h2 class="filter-title">Тип жилья:</h2>
-                    <label>
-                        <input type="checkbox" name="type[]" value="hotel" checked>
-                        <span class="filter-text">Гостиница</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="type[]" value="motel" checked>
-                        <span class="filter-text">Мотель</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="type[]" value="appartment" checked>
-                        <span class="filter-text">Апартаменты</span>
-                    </label>
-                </div>
-                <div class="filter-column-right">
-                    <h2  class="filter-title">Стоимость в сутки(р):</h2>
-                    <label>От
-                        <input type="number" name="start-price"  value="0">
-                    </label>
-                    <label>До
-                        <input type="number" name="finish-price" value="3000">
-                    </label>
-                    <div class="filter-scrollbar"></div>
-                    <input type="submit" class="filter-btn" value="Показать">
-                    <!--!! Посмотри в курсах академии как верстается блок с ползунком !!-->
-                    <!-- Отложил на потом -->
-                </div>
-            </form>
-        </article>
-
-        <article class="hotels-results">
-            <section class="results-sort">
-                <div class="results-found">Найдено:<span class="found-amount">3</span></div>
-                <div class="results-sorting">
-                    <span class="sorting-title">Сортировка:</span>
-                    <a href="#" class="sorting-price btn active"> По цене</a>
-                    <a href="#" class="sorting-type btn">По типу</a>
-                    <a href="#" class="sorting-rating btn">По рейтингу</a>
-                </div>
-                <div class="results-btns">
-                    <a href="#" class="btn btn-increase">▲</a>
-                    <a href="#" class="btn btn-decrease active">▼</a>
-                </div>
-            </section>
-
-            <section class="results-content">
-                <div class="results-item">
-                    <div class="item-img">
-                        <a href="#" title="Подробнее">
-                            <img src="img/amara-preview.jpg" class="pull-left" alt="Amara-preview" height="90" width="135">
-                        </a>
+        </header>
+        <main class="hotels-content">
+            <article class="hotels-filter">
+                <form action="https://echo.htmlacademy.ru" method="get">
+                    <div class="filter-column-small filter-column-left pull-left">
+                        <h2 class="filter-title">Инфраструктура:</h2>
+                        <label>
+                            <input type="checkbox" name="infrastructure[]" value="pool" checked>
+                            <span class="filter-text">Бассейн</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="infrastructure[]" value="parking">
+                            <span class="filter-text">Парковка</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="infrastructure[]" value="wifi">
+                            <span class="filter-text">Wi-Fi</span>
+                        </label>
                     </div>
+                    <!-- они идентичны, эти две колонки, кстати -->
+                    <div class="filter-column-small filter-column-center pull-left">
+                        <h2 class="filter-title">Тип жилья:</h2>
+                        <label>
+                            <input type="checkbox" name="type[]" value="hotel" checked>
+                            <span class="filter-text">Гостиница</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="type[]" value="motel" checked>
+                            <span class="filter-text">Мотель</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="type[]" value="appartment" checked>
+                            <span class="filter-text">Апартаменты</span>
+                        </label>
+                    </div>
+                    <div class="filter-column-right pull-right">
+                        <h2  class="filter-title">Стоимость в сутки(р):</h2>
+                        <label>От
+                            <input type="number" name="start-price"  value="0">
+                        </label>
+                        <label>До
+                            <input type="number" name="finish-price" value="3000">
+                        </label>
+                        <div class="filter-scrollbar"></div>
+                        <input type="submit" class="filter-btn" value="Показать">
+                        <!--!! Посмотри в курсах академии как верстается блок с ползунком !!-->
+                        <!-- Отложил на потом -->
+                    </div>
+                </form>
+            </article>
 
-                    <div class="item-info">
-                        <h3 class="item-title">Amara Resort &amp; SPA</h3>
-                        <p>
-                            <span class="item-type btn-width">Гостиница</span>
-                            <span class="item-price">От 3500р.</span>
-                        </p>
-                        <div class="item-btns">
-                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <a href="#" class="item-order item-btn">Забронировать</a>
+            <article class="hotels-results">
+                <section class="results-sort clearfix">
+                    <div class="results-found pull-left">Найдено:<span class="found-amount">3</span></div>
+                    <!-- коряво получается -sort и -sorting -->
+                    <div class="results-sorting pull-left">
+                        <span class="sorting-title">Сортировка:</span>
+                        <a href="#" class="sorting-btn sorting-price active"> По цене</a>
+                        <a href="#" class="sorting-btn sorting-type">По типу</a>
+                        <a href="#" class="sorting-btn sorting-rating">По рейтингу</a>
+                    </div>
+                    <div class="results-btns pull-right">
+                        <a href="#" class="sorting-btn btn-increase">▲</a>
+                        <a href="#" class="sorting-btn btn-decrease active">▼</a>
+                    </div>
+                </section>
+
+                <section class="results-content">
+                    <div class="results-item">
+                        <div class="item-img">
+                            <a href="#" title="Подробнее">
+                                <img src="img/amara-preview.jpg" class="pull-left" alt="Amara-preview" height="90" width="135">
+                            </a>
+                        </div>
+
+                        <div class="item-info">
+                            <h2 class="item-title">Amara Resort &amp; SPA</h2>
+                            <p>
+                                <span class="item-type btn-width">Гостиница</span>
+                                <span class="item-price">От 3500р.</span>
+                            </p>
+                            <div class="item-btns">
+                                <a href="#" class="item-more blue-btn item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                                <a href="#" class="item-order item-btn">Забронировать</a>
+                            </div>
+                        </div>
+
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">5</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
+                        </div>
+                    </div>
+                    <div class="results-item">
+                        <div class="item-img">
+                            <a href="#" title="Подробнее">
+                                <img src="img/desert-preview.jpg" class="pull-left" alt="Desrt Quail Inn" height="90" width="135">
+                            </a>
+                        </div>
+
+                        <div class="item-info">
+                            <h2 class="item-title">Desrt Quail Inn</h2>
+                            <p>
+                                <span class="item-type btn-width">Мотель</span>
+                                <span class="item-price">От 2000р.</span>
+                            </p>
+                            <div class="item-btns">
+                                <a href="#" class="item-more blue-btn item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                                <a href="#" class="item-order item-btn">Забронировать</a>
+                            </div>
+                        </div>
+
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">2</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">8.9</span></div>
                         </div>
                     </div>
 
-                    <div class="item-rating">
-                        <div class="rating-stars stars-5">5</div>
-                        <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
-                    </div>
-                </div>
-                <div class="results-item">
-                    <div class="item-img">
-                        <a href="#" title="Подробнее">
-                            <img src="img/desert-preview.jpg" class="pull-left" alt="Desrt Quail Inn" height="90" width="135">
-                        </a>
-                    </div>
+                    <div class="results-item">
+                        <div class="item-img">
+                            <a href="#" title="Подробнее">
+                                <img src="img/poco-preview.jpg" class="pull-left" alt="Poco Diablo preview" height="90" width="135">
+                            </a>
+                        </div>
 
-                    <div class="item-info">
-                        <h3 class="item-title">Desrt Quail Inn</h3>
-                        <p>
-                            <span class="item-type btn-width">Мотель</span>
-                            <span class="item-price">От 2000р.</span>
-                        </p>
-                        <div class="item-btns">
-                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <a href="#" class="item-order item-btn">Забронировать</a>
+                        <div class="item-info">
+                            <h2 class="item-title">Villas At Poco Diablo</h2>
+                            <p>
+                                <span class="item-type btn-width">Апартаменты</span>
+                                <span class="item-price">От 4000р.</span>
+                            </p>
+                            <div class="item-btns">
+                                <a href="#" class="item-more blue-btn item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
+                                <a href="#" class="item-order item-btn">Забронировать</a>
+                            </div>
+                        </div>
+
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">3</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">9.2</span></div>
                         </div>
                     </div>
+                </section>
+            </article>
+        </main>
 
-                    <div class="item-rating">
-                        <div class="rating-stars stars-5">2</div>
-                        <div class="rating-number">Рейтинг:<span class="rating-value">8.9</span></div>
-                    </div>
-                </div>
-
-                <div class="results-item">
-                    <div class="item-img">
-                        <a href="#" title="Подробнее">
-                            <img src="img/poco-preview.jpg" class="pull-left" alt="Poco Diablo preview" height="90" width="135">
-                        </a>
-                    </div>
-
-                    <div class="item-info">
-                        <h3 class="item-title">Villas At Poco Diablo</h3>
-                        <p>
-                            <span class="item-type btn-width">Апартаменты</span>
-                            <span class="item-price">От 4000р.</span>
-                        </p>
-                        <div class="item-btns">
-                            <a href="#" class="item-more item-btn btn-width" title="Отель Amara Resort">Подробнее</a>
-                            <a href="#" class="item-order item-btn">Забронировать</a>
-                        </div>
-                    </div>
-
-                    <div class="item-rating">
-                        <div class="rating-stars stars-5">3</div>
-                        <div class="rating-number">Рейтинг:<span class="rating-value">9.2</span></div>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container clearfix">
-            <section class="footer-hashtag">
-                <h2>#visitsedona</h2>
-            </section>
-            <section class="footer-socials">
-                <a href="#" class="social-btn social-btn-tw">Вконтакте</a>
-                <a href="#" class="social-btn social-btn-fb">Фейсбук</a>
-                <a href="#" class="social-btn social-btn-yt">Ютуб</a>
-            </section>
-            <section class="footer-copyright">
-                <p>website by</p>
-                <a href="https://htmlacademy.ru">
-                    <img src="img/htmlacademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
-                </a>
-            </section>
-        </div>
-    </footer>
+        <footer class="main-footer">
+            <div class="container clearfix">
+                <section class="footer-hashtag pull-left">
+                    <!-- Хэштэг, это же тоже ссылка? -->
+                    <h2>#visitsedona</h2>
+                </section>
+                <section class="footer-socials  pull-left">
+                    <a href="#" class="social-btn blue-btn social-btn-tw">Вконтакте</a>
+                    <a href="#" class="social-btn blue-btn social-btn-fb">Фейсбук</a>
+                    <a href="#" class="social-btn blue-btn social-btn-yt">Ютуб</a>
+                </section>
+                <section class="footer-copyright  pull-left">
+                    <span class="copyright-text">website by</span>
+                    <a href="https://htmlacademy.ru" class="copyright-logo">
+                        <img src="img/htmlacademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
+                    </a>
+                </section>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
