@@ -14,10 +14,10 @@
         <header class="main-header">
             <nav class="main-navigation clearfix">
                 <ul>
-                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Информация</a></li>
-                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
-                    <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right active">Гостиницы</a></li>
-                    <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
+                    <li class="main-nav-li pull-left"><a href="#">Информация</a></li>
+                    <li class="main-nav-li pull-left"><a href="#">Фото и видео</a></li> 
+                    <li class="main-nav-li pull-right"><a href="hotels.html"class="active">Гостиницы</a></li>
+                    <li class="main-nav-li pull-right"><a href="#">Карта штата</a></li>
                 </ul>
             </nav>
             <div class="top-logo">
@@ -27,8 +27,9 @@
             </div>
         </header>
         <main class="hotels-content">
-            <article class="hotels-filter">
+            <article class="hotels-filter clearfix">
                 <form action="https://echo.htmlacademy.ru" method="get">
+                    
                     <div class="filter-column-small filter-column-left pull-left">
                         <h2 class="filter-title">Инфраструктура:</h2>
                         <label>
@@ -44,7 +45,7 @@
                             <span class="filter-text">Wi-Fi</span>
                         </label>
                     </div>
-                    <!-- они идентичны, эти две колонки, кстати -->
+                   
                     <div class="filter-column-small filter-column-center pull-left">
                         <h2 class="filter-title">Тип жилья:</h2>
                         <label>
@@ -60,6 +61,7 @@
                             <span class="filter-text">Апартаменты</span>
                         </label>
                     </div>
+                    
                     <div class="filter-column-right pull-right">
                         <h2  class="filter-title">Стоимость в сутки(р):</h2>
                         <label>От
@@ -91,9 +93,15 @@
                         <a href="#" class="sorting-btn btn-decrease active">▼</a>
                     </div>
                 </section>
+                <!-- а это принципиально, чтобы сначал рейтинг, а потом картинка? Они же всё равно флоатятся в разные стороны -->
 
                 <section class="results-content">
                     <div class="results-item">
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">5</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
+                        </div>
+
                         <div class="item-img">
                             <a href="#" title="Подробнее">
                                 <img src="img/amara-preview.jpg" class="pull-left" alt="Amara-preview" height="90" width="135">
@@ -112,16 +120,17 @@
                             </div>
                         </div>
 
-                        <div class="item-rating">
-                            <div class="rating-stars stars-5">5</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
-                        </div>
                     </div>
                     <div class="results-item">
                         <div class="item-img">
                             <a href="#" title="Подробнее">
                                 <img src="img/desert-preview.jpg" class="pull-left" alt="Desrt Quail Inn" height="90" width="135">
                             </a>
+                        </div>
+
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">2</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">8.9</span></div>
                         </div>
 
                         <div class="item-info">
@@ -136,10 +145,6 @@
                             </div>
                         </div>
 
-                        <div class="item-rating">
-                            <div class="rating-stars stars-5">2</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">8.9</span></div>
-                        </div>
                     </div>
 
                     <div class="results-item">
@@ -147,6 +152,11 @@
                             <a href="#" title="Подробнее">
                                 <img src="img/poco-preview.jpg" class="pull-left" alt="Poco Diablo preview" height="90" width="135">
                             </a>
+                        </div>
+
+                        <div class="item-rating">
+                            <div class="rating-stars stars-5">3</div>
+                            <div class="rating-number">Рейтинг:<span class="rating-value">9.2</span></div>
                         </div>
 
                         <div class="item-info">
@@ -161,10 +171,6 @@
                             </div>
                         </div>
 
-                        <div class="item-rating">
-                            <div class="rating-stars stars-5">3</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">9.2</span></div>
-                        </div>
                     </div>
                 </section>
             </article>
@@ -173,8 +179,7 @@
         <footer class="main-footer">
             <div class="container clearfix">
                 <section class="footer-hashtag pull-left">
-                    <!-- Хэштэг, это же тоже ссылка? -->
-                    <h2>#visitsedona</h2>
+                    <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
                 </section>
                 <section class="footer-socials  pull-left">
                     <a href="#" class="social-btn blue-btn social-btn-tw">Вконтакте</a>

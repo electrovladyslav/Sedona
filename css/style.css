@@ -1,4 +1,4 @@
-
+/*--------FONTS---------------*/
 body {
   font-size: 14px;
   line-height: 21px;
@@ -6,8 +6,6 @@ body {
   font-family: "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   background-color: #f2f2f2;
-  background-repeat: no-repeat;
-  background-position: center top;
 }
 
 h1 {
@@ -25,7 +23,7 @@ h2 {
   font-weight: bold;
 }
 
-/* Positioning*/
+/*------ Positioning----------*/
 
 .clearfix::before,
 .clearfix::after {
@@ -46,34 +44,31 @@ h2 {
   margin:0px auto;
   background-color: white;
 }
-/*----------------------*/
+/*----------HEADER------------*/
 .main-header {
-  padding-top: 20px;
-  padding-left: 6%;
-  padding-right: 6%;
-  padding-bottom: 10px;
+  padding: 20px 6% 15px 6%;
   position: relative;
 }
 
-.main-navigation ul {
-  list-style-type: none; 
+.main-header ul {
+  padding: 0px;
   margin: 0px;
-}
+  list-style-type: none; 
+} 
 
 .main-nav-li {
   width: 20%;
 }
 
-.main-nav-li .pull-left {
+.main-nav-li.pull-left {
   text-align: left;
 }
 
-.main-nav-li .pull-right {
+.main-nav-li.pull-right {
   text-align: right;
 }
 
 .main-navigation a {
-  display: block;
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -105,15 +100,19 @@ h2 {
   left: 50%;
   margin-left: -69px;
 }
+
+.top-logo img {
+  height: 70px;
+  width: 138px;
+}
 /*----------------------*/
-/*Эта картинка на макете 1200 тоже занимает 510рх в высоту, 
-просто нижняя часть подлезает под заголовок и её не видно,
-а когда её экспортируешь - получается 773рх*/
+/*Так надо маски наложить, чтобы ТЗ соответствовало?
+— Крупное фото: фотография занимает 100% ширины, в её нижней части есть белая маска, которая также масштабируется на 100% ширины, но в отличие от фотографии меняет свои пропорции (то есть высота остаётся постоянной, а ширина — 100%).*/
 .start-img {
-  height: 773px;
- /* background-image: url('../img/start-img80.jpg') center top;
-  background-size: auto 773px;*/
-  background: gray url('../img/start-img80.jpg') center top;
+  height: 512px;
+  /*Опять же, вопрос по вертикальному размеру фото*/
+  background: url('../img/start-img-bottom-shape.png') no-repeat 100% bottom,
+              url('../img/start-img.jpg') no-repeat center top;
 }
 /*----------------------*/
 
@@ -126,22 +125,38 @@ h2 {
 
 .intro-title {
   width: 440px;
-  margin: 0px auto 40px auto;
+  margin: 0px auto 30px auto;
 }
 
 .intro p {
-  margin: 0px;
+  margin: 0px 26%;
 }
-/*----------------------*/
-/*Тут я с картинками не вьехал. Пройду курс про фоны, подправлю*/
+/*---------LANDSCAPE-------------*/
+/*А как будем бороться с переполнением контента? 
+Я предлагаю убрать высоту у контейнера и фон у картинки
+*/
 .landscape {
-  height: 256px;
+  /*height: 256px;*/
   color: white;
   background-color: #81b3d2;
-  /*Если блоки по верт идут впритык, то лучше управлять 
-  содержимым следующего его padding-top, чем margin-bottom предыдущего
-  так ведь?*/
-  /*margin-bottom: 60px*/
+}
+/*ТЗ
+— Фотографии, занимающие по две трети ширины вставляются так, чтобы обрезаться сверху и снизу при увеличении размера (ширина 66%, высота подстраивается под ширину, чтобы не нарушать пропорций, но фото не выходит за отведённую для него зону).
+*/
+.landscape-picture {
+  width: 67%;
+  height: 256px;
+  background-repeat: no-repeat;
+}
+
+.landscape-1 .landscape-picture {
+  background-image:url("../img/landscape1-800x256.jpg");   
+  background-position: 100% center;
+}
+
+.landscape-2 .landscape-picture {
+  background-image: url("../img/landscape2-800x256.jpg");
+  background-position: 0 center;
 }
 
 .landscape-description {
@@ -149,37 +164,34 @@ h2 {
   text-align: center;
   padding: 55px 6%;
   margin: 0px;
+  padding-bottom: 0px;
 }
 .centerred {
-  margin: 30px auto;
-}
-.landscape-picture {
-  width: 67%;
-  height: 256px;
-  background-color: #d6ded4;
+  margin: 20px auto;
 }
 
 .landscape p,
 .landscape h2{
   margin: 0px auto;
 }
-
-.landscape-1 .landscape-picture {
-  background: #d6ded4 url("../img/landscape1.jpg") center center; /*no-repeat center;*/
-}
-
-.landscape-2 .landscape-picture {
-  background: #d6ded4 url("../img/landscape2.jpg") no-repeat center;
-}
-/*----------------------*/
+/*----------FEATURES------------*/
 .features-item {
-  width: 21%;
-  padding: 60px 6% 70px 6%;
+  width: 21.3333%;
+  padding: 60px 6% 80px 6%;
   text-align: center;
 }
 
-.features-1 h2 {
-  margin: 30px auto;
+.features-item h2 {
+  width: 140px;
+  margin: 0px auto 20px auto;
+}
+
+.features-item p {
+  margin-bottom: 0px;
+}
+
+.features-1 img {
+  margin-bottom: 20px;
 }
 
 .features-2 {
@@ -187,34 +199,32 @@ h2 {
 }
 
 .features-2 .features-item {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 65px;
 }
-/*----------------------*/
+/*---------SEARCH FORM-------------*/
 .search-form {
+  padding-top: 45px;
   text-align: center;
-  padding-top: 60px;
-
+  line-height: 24px;
 }
 
 .search-title {
   font-size: 30px;
+  line-height: 36px;
   margin-top: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+
 }
 
 .search-form-title {
   margin-bottom: 50px;
 }
-/*Тут я тоже потом доверстаю
-Можно row дать position: relative, а инпутам absolute.
-Плюс ещё карта снизу должна лежать. Так что надо будет ещё c
-z-index поиграться*/
+
 .search-form-block {
-  width: 568px;
-  margin: 0px auto;
-  /*Временно*/
-  outline: 5px solid blue;
+  
+  
+  background-color: white;
 }
 
 .btn {
@@ -224,51 +234,117 @@ z-index поиграться*/
 }
 
 a.search-form-call {
+  height: 60px;
+  width: 568px;
+  margin: 0px auto;
   background-color: #766357;
   font-size: 21px;
   font-weight: bold;
-  padding: 32px;
+  padding-top: 25px;
+  /*padding-bottom: 35px;*/
   text-decoration: none;
 }
 
 .search-form-body {
+  position: absolute;
+  left: 50%;
+  margin-left: -284px; 
+  width: 458px;
   padding: 55px;
-  /*visibility: hidden;*/
+  text-align: left; 
+  background-color: white;
+}
 
+.search-form-body.hidden {
+  visibility: hidden;
 }
 
 .form-row {
-  margin: 30px 0px;
-
+  position: relative;
+  height: 38px;
+  width: 458px;
+  margin-bottom: 30px;
 }
 
+.form-row-half {
+  position: absolute;
+  width: 230px;
+  height: 38px;
+}
+.form-row-half:first-child {
+  left: 0;
+}
+
+.form-row-half:last-child {
+  right: 0;
+  width: 180px;
+}
 .form-description,
 .form-input {
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
   font-weight: bold; 
 }
+
 .form-description {
   text-align: left;
-  
+  left: 0;
+  margin-top: 7px;
 }
 
+.form-input {
+  right:0;
+}
 .form-input input {
-  width: 345px;
+  width: 330px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  border: 2px solid #f2f2f2;
+  background-color: #f2f2f2;
+  outline: none;
+
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
+.form-input input:hover {
+  border-color: #ebebeb;
+  background-color: #ebebeb;
+}
+
+.form-input input:focus {
+  border-color: #e5e5e5;
+  background-color: #ffffff;
+}
+
+.form-row-half input {
+  width: 114px;
+  padding: 0;
+  text-align: center;
+}
+/*!!ВРЕМЕННО!!*/
+.form-icon {
+  display: none;
+}
+
+.form-call {
+  margin-top: 55px;
+}
 .form-call input {
   width: 458px;
-  padding: 10px 15px;
+  padding: 16px 15px;
   border: 1px solid white;
 
   font-family: "PT Sans", Arial, sans-serif;
   font-weight: bold;
   font-size: 21px;
+  line-height: 24px;
   text-transform: uppercase;
 
   outline: none;
 }
+
 .blue-btn {
   color: white;
   background: #81b3d2;
@@ -282,7 +358,12 @@ a.search-form-call {
   color: #88b6d1;
   background: #5496bd;
 }
-/*--------------------------------*/
+/*-------------MAP----------------------*/
+.map {
+  height:475px;
+  background: #f2f1ef url("../img/map.jpg") center bottom;
+}
+/*------------FOOTER--------------------*/
 
 .main-footer section {
   width: 33%;
@@ -295,6 +376,11 @@ a.search-form-call {
 
 .footer-hashtag h2{
   margin: 0px;
+}
+
+.footer-hashtag a {
+  text-decoration: none;
+  color: black;
 }
 
 .footer-socials {
@@ -325,23 +411,31 @@ a.search-form-call {
 /*-----------------------------------------------------*/
 .hotels-filter {
   padding: 30px 6%;
-  background: #618ab2 url("../img/background-blurred.jpg")  no-repeat center;
+  background: #618ab2 url("../img/start-img-blurred.jpg")  center center;
   min-height: 358px;
   color: white;
 }
-/*Что-то запарился я с этими колонками. Сетку сделал, стилизую потом*/
-.filter-column-small {
-  width: 140px;
-  margin-right: 6%;
+/*ВРЕМЕННО. Стилизация потом*/
+.filter-column-small, 
+.filter-column-right {
+  outline: 2px solid red;
 }
 
+.filter-column-small {
+  width: 14%;
+  margin-right: 6%;
+  
+}
+.filter-column-right {
+  width: 26%;
+}
 .filter-title {
   font-size: 16px;
   font-weight: bold;
 }
 
 .filter-text {
-  display: block;
+  /*display: block;*/
   margin: 35px 40px;
 }
 /*--------------------------------------------*/
@@ -415,7 +509,7 @@ a.search-form-call {
   clear: both;
   display: table;
 }
-/*А можно мне тут их флоатить и распорку ставить, или надо классы присваивать?*/
+/*А можно мне тут их флоатить и распорку ставить, или надо классы присваивать, раз уж по всем страницам так делал?*/
 .item-img {
   float: left;
   margin-right: 30px;
@@ -424,12 +518,12 @@ a.search-form-call {
   background-color: #618ab2;
 }
 
-.item-info {
-  float: left;
-}
-
 .item-rating {
   float: right;
+}
+
+.item-info {
+  overflow: hidden;  
 }
 
 .item-title, 

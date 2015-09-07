@@ -11,3 +11,5 @@ I'm studying at <a href="https://htmlacademy.ru">HTML Academy</a>
 30.08 Made one start-img with text "Wellcome...", some changes in forms on index and hotels
 
 04.08 Made layout grid and some stilisations.
+
+07.08 Made some changes to implement mentor's remark.

@@ -14,14 +14,14 @@
         <header class="main-header">
             <nav class="main-navigation clearfix">
                 <ul>
-                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Информация</a></li>
-                    <li class="main-nav-li pull-left"><a href="#" class="pull-left">Фото и видео</a></li> 
-                    <li class="main-nav-li pull-right"><a href="hotels.html" class="pull-right">Гостиницы</a></li>
-                    <li class="main-nav-li pull-right"><a href="#" class="pull-right">Карта штата</a></li>
+                    <li class="main-nav-li pull-left"><a href="#">Информация</a></li>
+                    <li class="main-nav-li pull-left"><a href="#">Фото и видео</a></li> 
+                    <li class="main-nav-li pull-right"><a href="hotels.html">Гостиницы</a></li>
+                    <li class="main-nav-li pull-right"><a href="#">Карта штата</a></li>
                 </ul>
             </nav>
             <div class="top-logo">
-                <a href="index.html" alt="Главная">
+                <a href="index.html" title="Главная">
                     <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
                 </a>
             </div>
@@ -104,26 +104,26 @@
                     
                     <div class="search-form-body">
                         <form action="https://echo.htmlacademy.ru" method="get">
+                            
                             <div class="form-row">
                                 <label for="date-enter-id" class="form-description">Дата заезда</label>
                                 <div class="form-input">
                                     <input type="text" name="date-enter" id="date-enter-id" placeholder="24 апреля 2014">
                                     <span class="form-icon"></span>
                                 </div>
-                                
                             </div>
 
                             <div class="form-row">
                                 <label class="form-description" for="date-enter-id">Дата выезда</label>
                                 <div class="form-input">
-                                    <input type="text" name="date-exit" id="date-enter-id" placeholder="4 июля 2014">
+                                    <input type="text" name="date-exit" id="date-exit-id" placeholder="4 июля 2014">
                                     <span class="form-icon"></span>
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-row-half">
-                                    <label class="form-description">Взрослые</label>
+                                    <label class="form-description">Взрослые:</label>
                                     <div class="form-input">
                                         <span class="form-icon">+</span>
                                         <input type="number" name="adults" value="2">
@@ -132,7 +132,7 @@
                                 </div>
 
                                 <div class="form-row-half">    
-                                    <label class="form-description">Дети</label>
+                                    <label class="form-description">Дети:</label>
                                     <div class="form-input">
                                         <span class="form-icon">+</span>
                                         <input type="number" name="children" id="children-id" value="0">
@@ -146,12 +146,14 @@
                     </div>
                 </div>
             </section>
+            <section class="map">
+                <!-- Пока бэкграунд, потом карту интерактивную добавим -->
+            </section>
         </main>
         <footer class="main-footer">
             <div class="container clearfix">
                 <section class="footer-hashtag pull-left">
-                    <!-- Хэштэг, это же тоже ссылка? -->
-                    <h2>#visitsedona</h2>
+                    <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
                 </section>
                 <section class="footer-socials  pull-left">
                     <a href="#" class="social-btn blue-btn social-btn-tw">Вконтакте</a>
