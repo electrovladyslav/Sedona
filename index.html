@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <title>Sedona</title>
@@ -38,7 +38,7 @@
             </section>
 
             <section class="landscape landscape-1 clearfix">
-                <div class="landscape-picture pull-right"></div>
+                <div class="landscape-picture"></div>
 
                 <div class="landscape-description pull-left">
                     <h2 class="landscape-title">Настоящий городок</h2>
@@ -66,7 +66,7 @@
             </section>
 
             <section class="landscape landscape-2 clearfix">
-                <div class="landscape-picture pull-left"></div>
+                <div class="landscape-picture"></div>
                 <div class="landscape-description pull-right">
                     <h2 class="landscape-title">Там есть мост дьявола</h2>
                     <div class="centerred"> - №2 - </div>
@@ -95,7 +95,6 @@
             <section class="search-form">
                 <div class="search-form-title">
                     <h2 class="search-title">Заинтересовались?</h2>
-                    <!-- может имеет смысл тут брейк поставить? Или на два спана разбить -->
                     <p>Укажите предполагаемые даты поездки<br>
                      и мы покажем вам лучшие предложения гостиниц в Седоне</p>
                 </div> 
@@ -106,18 +105,18 @@
                         <form action="https://echo.htmlacademy.ru" method="get">
                             
                             <div class="form-row">
-                                <label for="date-enter-id" class="form-description">Дата заезда</label>
+                                <label for="date-enter-id" class="form-description">Дата заезда:</label>
                                 <div class="form-input">
                                     <input type="text" name="date-enter" id="date-enter-id" placeholder="24 апреля 2014">
-                                    <span class="form-icon"></span>
+                                    <span class="form-icon icon-calendar"></span>
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <label class="form-description" for="date-enter-id">Дата выезда</label>
+                                <label class="form-description" for="date-enter-id">Дата выезда:</label>
                                 <div class="form-input">
                                     <input type="text" name="date-exit" id="date-exit-id" placeholder="4 июля 2014">
-                                    <span class="form-icon"></span>
+                                    <span class="form-icon icon-calendar"></span>
                                 </div>
                             </div>
                             
@@ -125,18 +124,18 @@
                                 <div class="form-row-half">
                                     <label class="form-description">Взрослые:</label>
                                     <div class="form-input">
-                                        <span class="form-icon">+</span>
-                                        <input type="number" name="adults" value="2">
-                                        <span class="form-icon">-</span>
+                                        <span class="form-icon icon-plus"></span>
+                                        <input type="text" name="adults" value="2">
+                                        <span class="form-icon icon-minus"></span>
                                     </div>
                                 </div>
 
                                 <div class="form-row-half">    
-                                    <label class="form-description">Дети:</label>
+                                    <label class="form-description form-description-short">Дети:</label>
                                     <div class="form-input">
-                                        <span class="form-icon">+</span>
-                                        <input type="number" name="children" id="children-id" value="0">
-                                        <span class="form-icon">-</span>
+                                        <span class="form-icon icon-plus"></span>
+                                        <input type="text" name="children" id="children-id" value="0">
+                                        <span class="form-icon icon-minus"></span>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +146,9 @@
                 </div>
             </section>
             <section class="map">
-                <!-- Пока бэкграунд, потом карту интерактивную добавим -->
+                <div class="map-bg">
+                    
+                </div>
             </section>
         </main>
         <footer class="main-footer">
@@ -156,14 +157,14 @@
                     <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
                 </section>
                 <section class="footer-socials  pull-left">
-                    <a href="#" class="social-btn blue-btn social-btn-tw">Вконтакте</a>
-                    <a href="#" class="social-btn blue-btn social-btn-fb">Фейсбук</a>
-                    <a href="#" class="social-btn blue-btn social-btn-yt">Ютуб</a>
+                     <a href="#" class="social-btn blue-btn"><span class="icon-twitter"></span></a>
+                    <a href="#" class="social-btn blue-btn"><span class="icon-facebook"></span></a>
+                    <a href="#" class="social-btn blue-btn"><span class="icon-youtube"></span></a>
                 </section>
                 <section class="footer-copyright  pull-left">
                     <span class="copyright-text">website by</span>
                     <a href="https://htmlacademy.ru" class="copyright-logo">
-                        <img src="img/htmlacademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
+                        
                     </a>
                 </section>
             </div>

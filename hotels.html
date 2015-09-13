@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <title>Отели Седоны</title>
@@ -15,7 +15,7 @@
             <nav class="main-navigation clearfix">
                 <ul>
                     <li class="main-nav-li pull-left"><a href="#">Информация</a></li>
-                    <li class="main-nav-li pull-left"><a href="#">Фото и видео</a></li> 
+                    <li class="main-nav-li pull-left"><a href="#" /></li> 
                     <li class="main-nav-li pull-right"><a href="hotels.html"class="active">Гостиницы</a></li>
                     <li class="main-nav-li pull-right"><a href="#">Карта штата</a></li>
                 </ul>
@@ -27,20 +27,20 @@
             </div>
         </header>
         <main class="hotels-content">
-            <article class="hotels-filter clearfix">
-                <form action="https://echo.htmlacademy.ru" method="get">
+            <article class="hotels-filter">
+                <form action="https://echo.htmlacademy.ru" method="get" class="clearfix">
                     
                     <div class="filter-column-small filter-column-left pull-left">
                         <h2 class="filter-title">Инфраструктура:</h2>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="infrastructure[]" value="pool" checked>
                             <span class="filter-text">Бассейн</span>
                         </label>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="infrastructure[]" value="parking">
                             <span class="filter-text">Парковка</span>
                         </label>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="infrastructure[]" value="wifi">
                             <span class="filter-text">Wi-Fi</span>
                         </label>
@@ -48,58 +48,76 @@
                    
                     <div class="filter-column-small filter-column-center pull-left">
                         <h2 class="filter-title">Тип жилья:</h2>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="type[]" value="hotel" checked>
                             <span class="filter-text">Гостиница</span>
                         </label>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="type[]" value="motel" checked>
                             <span class="filter-text">Мотель</span>
                         </label>
-                        <label>
+                        <label class="filter-label">
                             <input type="checkbox" name="type[]" value="appartment" checked>
                             <span class="filter-text">Апартаменты</span>
                         </label>
                     </div>
                     
-                    <div class="filter-column-right pull-right">
-                        <h2  class="filter-title">Стоимость в сутки(р):</h2>
-                        <label>От
-                            <input type="number" name="start-price"  value="0">
-                        </label>
-                        <label>До
-                            <input type="number" name="finish-price" value="3000">
-                        </label>
-                        <div class="filter-scrollbar"></div>
-                        <input type="submit" class="filter-btn" value="Показать">
-                        <!--!! Посмотри в курсах академии как верстается блок с ползунком !!-->
-                        <!-- Отложил на потом -->
+                    <div class="filter-column-right range-filter pull-right">
+                        <h2 class="filter-title">Стоимость в сутки (р):</h2>
+                        <div class="price-controls">
+                            <label class="min-price">от <input name="min-price" type="text" value="0"></label>
+                            
+                            <label class="max-price">до <input name="max-price" type="text" value="3000"></label>
+                        </div>
+                        <div class="range-controls">
+                            <div class="scale">
+                                <div class="bar"></div>
+                            </div>
+                            <div class="toggle toggle-min"></div>
+                            <div class="toggle toggle-max"></div>
+                        </div>
+                    
+                    <div class="filter-call">
+                        <input type="submit" value="Показать">
                     </div>
+                    </div>
+
                 </form>
             </article>
 
             <article class="hotels-results">
                 <section class="results-sort clearfix">
-                    <div class="results-found pull-left">Найдено:<span class="found-amount">3</span></div>
+                    <div class="results-found pull-left">
+                        Найдено: <span class="found-amount">3</span>
+                    </div>
+                    <div class="results-arrows pull-right">
+                        <a href="#" class="sorting-arrow btn-increase">
+                            <span class="icon-up-dir"></span>
+                        </a>
+                        <a href="#" class="sorting-arrow btn-decrease active">
+                            <span class="icon-down-dir"></span>
+                        </a>
+                    </div>
                     <!-- коряво получается -sort и -sorting -->
-                    <div class="results-sorting pull-left">
+                    <div class="results-sorting">
                         <span class="sorting-title">Сортировка:</span>
                         <a href="#" class="sorting-btn sorting-price active"> По цене</a>
                         <a href="#" class="sorting-btn sorting-type">По типу</a>
                         <a href="#" class="sorting-btn sorting-rating">По рейтингу</a>
                     </div>
-                    <div class="results-btns pull-right">
-                        <a href="#" class="sorting-btn btn-increase">▲</a>
-                        <a href="#" class="sorting-btn btn-decrease active">▼</a>
-                    </div>
                 </section>
-                <!-- а это принципиально, чтобы сначал рейтинг, а потом картинка? Они же всё равно флоатятся в разные стороны -->
+                
 
                 <section class="results-content">
                     <div class="results-item">
                         <div class="item-rating">
-                            <div class="rating-stars stars-5">5</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">8.5</span></div>
+                            <div class="rating-stars stars-4">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                            <div class="rating-number">Рейтинг: <span class="rating-value">8,5</span></div>
                         </div>
 
                         <div class="item-img">
@@ -129,8 +147,11 @@
                         </div>
 
                         <div class="item-rating">
-                            <div class="rating-stars stars-5">2</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">8.9</span></div>
+                            <div class="rating-stars stars-2">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                            <div class="rating-number">Рейтинг: <span class="rating-value">8,9</span></div>
                         </div>
 
                         <div class="item-info">
@@ -155,8 +176,12 @@
                         </div>
 
                         <div class="item-rating">
-                            <div class="rating-stars stars-5">3</div>
-                            <div class="rating-number">Рейтинг:<span class="rating-value">9.2</span></div>
+                            <div class="rating-stars stars-3">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                            <div class="rating-number">Рейтинг: <span class="rating-value">9,2</span></div>
                         </div>
 
                         <div class="item-info">
@@ -176,23 +201,29 @@
             </article>
         </main>
 
-        <footer class="main-footer">
-            <div class="container clearfix">
-                <section class="footer-hashtag pull-left">
-                    <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
-                </section>
-                <section class="footer-socials  pull-left">
-                    <a href="#" class="social-btn blue-btn social-btn-tw">Вконтакте</a>
-                    <a href="#" class="social-btn blue-btn social-btn-fb">Фейсбук</a>
-                    <a href="#" class="social-btn blue-btn social-btn-yt">Ютуб</a>
-                </section>
-                <section class="footer-copyright  pull-left">
-                    <span class="copyright-text">website by</span>
-                    <a href="https://htmlacademy.ru" class="copyright-logo">
-                        <img src="img/htmlacademy-logo.png" alt="HTMLAcademy-logo" height="39" width="113">
-                    </a>
-                </section>
-            </div>
+       <footer class="hotels-footer">
+          <div class="container clearfix">
+              <section class="footer-hashtag pull-left">
+                  <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
+              </section>
+              <section class="footer-socials  pull-left">
+                   <a href="#" class="social-btn blue-btn"><span class="icon-twitter"></span></a>
+
+
+
+
+
+                                                                                                                          
+                  <a href="#" class="social-btn blue-btn"><span class="icon-facebook"></span></a>
+                  <a href="#" class="social-btn blue-btn"><span class="icon-youtube"></span></a>
+              </section>
+              <section class="footer-copyright  pull-left">
+                  <span class="copyright-text">website by</span>
+                  <a href="https://htmlacademy.ru" class="copyright-logo">
+                      
+                  </a>
+              </section>
+          </div>
         </footer>
     </div>
 </body>

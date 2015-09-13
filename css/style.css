@@ -1,4 +1,68 @@
-/*--------FONTS---------------*/
+/*----------------------ICONS FONT------------------------------*/
+@font-face {
+  font-family: 'symbols-sedona';
+  src: url('../font/symbols-sedona.eot?60737633');
+  src: url('../font/symbols-sedona.eot?60737633#iefix') format('embedded-opentype'),
+       url('../font/symbols-sedona.woff?60737633') format('woff'),
+       url('../font/symbols-sedona.ttf?60737633') format('truetype'),
+       url('../font/symbols-sedona.svg?60737633#symbols-sedona') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'symbols-sedona';
+    src: url('../font/symbols-sedona.svg?60737633#symbols-sedona') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "symbols-sedona";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-facebook:before { content: '\66'; } /* 'f' */
+.icon-twitter:before { content: '\74'; } /* 't' */
+.icon-up-dir:before { content: '\25b2'; } /* '▲' */
+.icon-down-dir:before { content: '\25bc'; } /* '▼' */
+.icon-star:before { content: '\2605'; } /* '★' */
+.icon-check-off:before { content: '\2610'; } /* '☐' */
+.icon-check-on:before { content: '\2611'; } /* '☑' */
+.icon-calendar:before { content: '\e800'; } /* '' */
+.icon-plus:before { content: '\e801'; } /* '' */
+.icon-minus:before { content: '\e802'; } /* '' */
+.icon-youtube:before { content: '\f39e'; } /* '' */
+/*---------------PAGE FONTS---------------------------*/
 body {
   font-size: 14px;
   line-height: 21px;
@@ -11,15 +75,12 @@ body {
 h1 {
   font-size: 21px;
   line-height: 24px;
-  color: black;
   font-weight: bold;
-  font-family: "PT Sans", Arial, sans-serif;
 }
 
 h2 {
   font-size: 21px;
   line-height: 26px;
-  font-family:"PT Sans", Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -39,10 +100,14 @@ h2 {
 }
 /*----------------------*/
 .wrapper {
+  position: relative;
   min-width: 768px;
   max-width: 1200px;
   margin:0px auto;
   background-color: white;
+  -webkit-box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
+     -moz-box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
+          box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
 }
 /*----------HEADER------------*/
 .main-header {
@@ -53,7 +118,7 @@ h2 {
 .main-header ul {
   padding: 0px;
   margin: 0px;
-  list-style-type: none; 
+  list-style: none; 
 } 
 
 .main-nav-li {
@@ -103,20 +168,14 @@ h2 {
 
 .top-logo img {
   height: 70px;
-  width: 138px;
 }
-/*----------------------*/
-/*Так надо маски наложить, чтобы ТЗ соответствовало?
-— Крупное фото: фотография занимает 100% ширины, в её нижней части есть белая маска, которая также масштабируется на 100% ширины, но в отличие от фотографии меняет свои пропорции (то есть высота остаётся постоянной, а ширина — 100%).*/
+/*----------PAGE CONTENT------------*/
+
 .start-img {
   height: 512px;
-  /*Опять же, вопрос по вертикальному размеру фото*/
   background: url('../img/start-img-bottom-shape.png') no-repeat 100% bottom,
               url('../img/start-img.jpg') no-repeat center top;
 }
-/*----------------------*/
-
-
 
 .intro {
   text-align: center;
@@ -132,39 +191,46 @@ h2 {
   margin: 0px 26%;
 }
 /*---------LANDSCAPE-------------*/
-/*А как будем бороться с переполнением контента? 
-Я предлагаю убрать высоту у контейнера и фон у картинки
-*/
+
 .landscape {
-  /*height: 256px;*/
+  min-height: 256px;
+  position: relative;
   color: white;
   background-color: #81b3d2;
 }
-/*ТЗ
+/*!!! Всё-равно есть сомнения на соответствие ТЗ
+
 — Фотографии, занимающие по две трети ширины вставляются так, чтобы обрезаться сверху и снизу при увеличении размера (ширина 66%, высота подстраивается под ширину, чтобы не нарушать пропорций, но фото не выходит за отведённую для него зону).
+
+?? что они имели в виду под словами "высота подстраивается под ширину"?  У нас сейчас высота картинки сандартна, а ширина под неё подстраивается: при увеличении горизонтального разрешения, выезжает область картинки, справа, которую не  было видно. Может надо сделать, чтобы было видно 100% ширины картинки, а высота обрезалась?
 */
+
 .landscape-picture {
+  position: absolute;   /*защита от переполнения контента*/
+  top:0;
+  bottom: 0;
   width: 67%;
-  height: 256px;
   background-repeat: no-repeat;
+  background-size: cover;  
 }
 
 .landscape-1 .landscape-picture {
+  right: 0;
   background-image:url("../img/landscape1-800x256.jpg");   
-  background-position: 100% center;
+  /*background-position: 100% center;*/
 }
 
 .landscape-2 .landscape-picture {
+  left:0;
   background-image: url("../img/landscape2-800x256.jpg");
-  background-position: 0 center;
+  /*background-position: 0 center;*/
 }
 
 .landscape-description {
   width: 21%;
   text-align: center;
-  padding: 55px 6%;
+  padding: 55px 6% 15px 6%;
   margin: 0px;
-  padding-bottom: 0px;
 }
 .centerred {
   margin: 20px auto;
@@ -223,7 +289,7 @@ h2 {
 
 .search-form-block {
   
-  
+ 
   background-color: white;
 }
 
@@ -252,14 +318,76 @@ a.search-form-call {
   width: 458px;
   padding: 55px;
   text-align: left; 
+  font-weight: bold;
   background-color: white;
+  -webkit-box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
+     -moz-box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
+          box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
+
 }
 
 .search-form-body.hidden {
   visibility: hidden;
 }
 
-.form-row {
+.form-row  {
+  margin-bottom: 30px;
+
+}
+
+.form-row:after,
+.form-row-half:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.form-description {
+  float: left;
+  /*overflow: hidden;*/
+  width: 98px;
+  margin-top: 7px;
+  padding-right: 15px;
+}
+
+.form-input {
+  /*float: right;*/
+  width: 345px;
+  overflow: hidden;
+  position: relative;
+}
+
+/*почему саблайм не подсвечивает box-sizing?
+надо с префиксами его писать?*/
+.form-input input {
+  box-sizing: border-box;
+  height: 38px;
+  width: 100%;
+  padding-left: 10px;
+  border: 2px solid #f2f2f2;
+  background-color: #f2f2f2;
+  outline: none;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*Почему текст вываливается при переполнении?*/
+.form-row-half {
+  width: 50%;
+  float: left;
+}
+
+.form-row-half .form-input {
+  width: 113px;
+}
+
+.form-description-short {
+  width: 48px;
+  padding-left: 50px; 
+}
+
+/*Вёрстка формы поиска на абсолютном позиционировании*/
+/*.form-row {
   position: relative;
   height: 38px;
   width: 458px;
@@ -295,18 +423,17 @@ a.search-form-call {
   right:0;
 }
 .form-input input {
-  width: 330px;
+  width: 300px;
   height: 34px;
   margin: 0;
-  padding: 0;
-  padding-left: 10px;
+  padding: 0 10px 0 30px;
   border: 2px solid #f2f2f2;
   background-color: #f2f2f2;
   outline: none;
 
   font-weight: bold;
   text-transform: uppercase;
-}
+}*/
 
 .form-input input:hover {
   border-color: #ebebeb;
@@ -323,9 +450,27 @@ a.search-form-call {
   padding: 0;
   text-align: center;
 }
-/*!!ВРЕМЕННО!!*/
 .form-icon {
-  display: none;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  color: #c2c2c2;
+}
+
+.form-icon:hover {
+  color: #000000;
+}
+
+.form-icon:active {
+  color: #81b3d2;
+}
+
+.icon-calendar {
+  cursor: pointer;
+}
+.icon-minus {
+  right: auto;
+  left: 5px;
 }
 
 .form-call {
@@ -360,13 +505,30 @@ a.search-form-call {
 }
 /*-------------MAP----------------------*/
 .map {
-  height:475px;
+ 
+  height: 593px;
   background: #f2f1ef url("../img/map.jpg") center bottom;
+}
+
+.map-bg {
+  
+  
 }
 /*------------FOOTER--------------------*/
 
-.main-footer section {
-  width: 33%;
+.main-footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /*футер лежит поверх карты*/
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.main-footer section,
+.hotels-footer section {
+  width: 33.33333%;
   text-align: center;
 }
 
@@ -380,22 +542,24 @@ a.search-form-call {
 
 .footer-hashtag a {
   text-decoration: none;
-  color: black;
+  color:black;
 }
 
 .footer-socials {
   margin-top: 35px; 
+  font-size: 0;
 }
 .social-btn {
-  margin: 0 3px;
+  margin: 0 3px 10px 3px;
   display: inline-block;
   vertical-align: top;
   width: 46px;
-  height: 48px;
-
-  font-size: 0;
+  height: 33px;
+  padding-top: 15px;
+  font-size: 14px;
   text-decoration: none;
 }
+
 
 .footer-copyright {
   margin-top: 40px;
@@ -405,39 +569,179 @@ a.search-form-call {
 .copyright-logo {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 5px;
 }
+
+.copyright-logo {
+  width: 113px;
+  height: 39px;
+  background: url("../img/logo-sprite.png") no-repeat;
+  background-position: -5px -5px;
+  text-decoration: none;
+} 
+
+.copyright-logo:hover {
+  background-position: -251px -5px;
+}
+.copyright-logo:active {
+  background-position: -128px -5px;
+}
+
+
+
 /*-----------------------------------------------------*/
 /*---------------hotels.html---------------------------*/
 /*-----------------------------------------------------*/
 .hotels-filter {
   padding: 30px 6%;
   background: #618ab2 url("../img/start-img-blurred.jpg")  center center;
-  min-height: 358px;
+  min-height: 156px;
   color: white;
 }
-/*ВРЕМЕННО. Стилизация потом*/
-.filter-column-small, 
-.filter-column-right {
-  outline: 2px solid red;
+
+.hotels-filter h2 {
+  margin: 0 auto 20px 0;
 }
 
 .filter-column-small {
-  width: 14%;
-  margin-right: 6%;
+  width: 18%;
+  margin-right: 14%;
   
-}
-.filter-column-right {
-  width: 26%;
 }
 .filter-title {
   font-size: 16px;
   font-weight: bold;
 }
 
-.filter-text {
-  /*display: block;*/
-  margin: 35px 40px;
+.filter-column-small input[type="checkbox"] {
+  display: none;
 }
+
+.filter-label {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 25px;
+  margin-right: 30%;
+  padding-left: 40px;
+}
+
+.filter-column-small .filter-label:last-child {
+  margin-bottom: 0;
+}
+input[type="checkbox"] + .filter-text::before {
+  content: '\2610';
+  font-family: "symbols-sedona";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+input[type="checkbox"]:checked + .filter-text::before {
+  content: '\2611';
+}
+
+/*========================================*/
+
+.filter-column-right {
+  width: 26%;
+  min-width: 224px;
+}
+
+.filter-column-right  h2{
+  margin-bottom: 15px; 
+}
+
+.price-controls {
+  
+  padding: 5px 0;
+  font-size: 0;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.price-controls label {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50%;
+  height: 22px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.price-controls label:last-child {
+  border-left: 2px solid #fff;
+} 
+.price-controls input {
+  width: 50%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  text-transform: uppercase;
+
+}
+.range-controls {
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #948482;
+}
+
+.range-controls .bar {
+  width: 82%;
+  height: 2px;
+  background: #ffffff;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  background: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.range-controls .toggle:hover {
+  background: #1c4f80;
+}
+
+.range-controls .toggle-min {
+  left: 0px;
+}
+
+.range-controls .toggle-max {
+  left: 82%;
+}
+
+.filter-call {
+  width: 137px;
+  margin: 0px auto;
+}
+
+.filter-call input {
+  width: 100%;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  outline: none;
+  background: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /*--------------------------------------------*/
 .results-sort {
   padding: 35px 6%;
@@ -452,6 +756,7 @@ a.search-form-call {
 
 .results-sorting {
   font-size: 12px;
+  overflow: hidden;
 }
 
 .sorting-btn {
@@ -482,17 +787,25 @@ a.search-form-call {
   border:  none;
 }
 
-.results-btns .sorting-btn {
-  margin-left: 15px;
+
+
+
+.results-arrows .sorting-arrow {
+  /*margin-left: 15px;*/
+  font-size: 20px;
+  font-weight: bold;
   color: #cccccc;
   border: none;
 }
-.results-btns .sorting-btn:hover {
+
+.results-arrows .sorting-arrow ::before {
+  margin: 0;
+}
+.results-arrows .sorting-arrow:hover {
   color: black;
   border: none;
 }
-.results-btns .sorting-btn:active,
-.results-btns .sorting-btn.active {
+.results-arrows .sorting-arrow.active {
   color:#81b3d2;
 }
 
@@ -520,8 +833,21 @@ a.search-form-call {
 
 .item-rating {
   float: right;
+  width: 120px;
 }
 
+.rating-stars {
+  margin-bottom: 45px;
+  color: #81b3d2;
+  text-align: right;
+}
+
+.rating-number {
+  margin-left: 10px;
+  padding: 3px 0px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
 .item-info {
   overflow: hidden;  
 }
@@ -565,3 +891,5 @@ color:#857871;
   width: 110px;
   margin-right: 6px;
 }
+
+

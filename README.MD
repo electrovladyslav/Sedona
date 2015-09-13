@@ -13,3 +13,5 @@ I'm studying at <a href="https://htmlacademy.ru">HTML Academy</a>
 04.08 Made layout grid and some stilisations.
 
 07.08 Made some changes to implement mentor's remark.
+
+12.08 Added icon fonts, shadows, implemented stages for buttons, made some changes. 
