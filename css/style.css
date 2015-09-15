@@ -269,6 +269,8 @@ h2 {
   padding-bottom: 65px;
 }
 /*---------SEARCH FORM-------------*/
+
+
 .search-form {
   padding-top: 45px;
   text-align: center;
@@ -305,6 +307,8 @@ a.search-form-call {
   margin: 0px auto;
   background-color: #766357;
   font-size: 21px;
+  line-height: 26px;
+
   font-weight: bold;
   padding-top: 25px;
   /*padding-bottom: 35px;*/
@@ -313,6 +317,7 @@ a.search-form-call {
 
 .search-form-body {
   position: absolute;
+  display: none;
   left: 50%;
   margin-left: -284px; 
   width: 458px;
@@ -326,8 +331,26 @@ a.search-form-call {
 
 }
 
-.search-form-body.hidden {
-  visibility: hidden;
+@keyframes fade {
+  0% {opacity: 0;}
+  70% {opacity: 0.5;}
+  90% {opacity: 0.7;}
+  100% {opacity: 1;}
+}
+/*@keyframes bounce {
+0% { transform: translateY(-2000px); }
+70% { transform: translateY(30px); }
+90% { transform: translateY(-10px); }
+100% { transform: translateY(0); }
+}
+.modal-content-show {
+display: block;
+animation: bounce 0.6s;
+}*/
+
+.search-form-body.show {
+  display: block;
+  animation: fade 0.5s;
 }
 
 .form-row  {
@@ -455,6 +478,7 @@ a.search-form-call {
   right: 5px;
   top: 6px;
   color: #c2c2c2;
+  cursor: pointer;
 }
 
 .form-icon:hover {
@@ -465,9 +489,6 @@ a.search-form-call {
   color: #81b3d2;
 }
 
-.icon-calendar {
-  cursor: pointer;
-}
 .icon-minus {
   right: auto;
   left: 5px;
@@ -613,6 +634,7 @@ a.search-form-call {
   font-weight: bold;
 }
 
+/*-----------СТИЛИЗАЦИЯ CHECK-BOX'ов-----------*/
 .filter-column-small input[type="checkbox"] {
   display: none;
 }
@@ -635,6 +657,7 @@ input[type="checkbox"] + .filter-text::before {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
   font-size: 20px;
   color: #fff;
 }
@@ -643,7 +666,7 @@ input[type="checkbox"]:checked + .filter-text::before {
   content: '\2611';
 }
 
-/*========================================*/
+/*=================RANGE-FILTER=======================*/
 
 .filter-column-right {
   width: 26%;
@@ -742,7 +765,7 @@ input[type="checkbox"]:checked + .filter-text::before {
   text-transform: uppercase;
 }
 
-/*--------------------------------------------*/
+/*------------------СОРТИРОВКА: ПО ЦЕНЕ, ПО ТИПУ...--------*/
 .results-sort {
   padding: 35px 6%;
   border-bottom: 1px solid #e5e5e5;
@@ -791,7 +814,6 @@ input[type="checkbox"]:checked + .filter-text::before {
 
 
 .results-arrows .sorting-arrow {
-  /*margin-left: 15px;*/
   font-size: 20px;
   font-weight: bold;
   color: #cccccc;
@@ -810,7 +832,7 @@ input[type="checkbox"]:checked + .filter-text::before {
 }
 
 
-/*---------------------------------------------*/
+/*-------------------КАРТОЧКИ ОТЕЛЕЙ--------------*/
 .results-item {
   padding: 30px 6%;
   border-bottom: 1px solid #e5e5e5;
@@ -829,6 +851,10 @@ input[type="checkbox"]:checked + .filter-text::before {
   width: 135px;
   height: 90px; 
   background-color: #618ab2;
+}
+.item-img img {
+  max-width: 100%;
+  height: auto;
 }
 
 .item-rating {

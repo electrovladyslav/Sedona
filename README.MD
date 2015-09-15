@@ -15,3 +15,5 @@ I'm studying at <a href="https://htmlacademy.ru">HTML Academy</a>
 07.08 Made some changes to implement mentor's remark.
 
 12.08 Added icon fonts, shadows, implemented stages for buttons, made some changes. 
+
+15.08 Added js scrip for improve usabillity. Added interactive google map.
