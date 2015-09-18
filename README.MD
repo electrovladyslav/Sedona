@@ -17,3 +17,5 @@ I'm studying at <a href="https://htmlacademy.ru">HTML Academy</a>
 12.08 Added icon fonts, shadows, implemented stages for buttons, made some changes. 
 
 15.08 Added js scrip for improve usabillity. Added interactive google map.
+
+19.08 Corrected font sizies and positions of element s on page by Pixel Perfect.
