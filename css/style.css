@@ -62,6 +62,7 @@
 .icon-plus:before { content: '\e801'; } /* '' */
 .icon-minus:before { content: '\e802'; } /* '' */
 .icon-youtube:before { content: '\f39e'; } /* '' */
+
 /*---------------PAGE FONTS---------------------------*/
 body {
   font-size: 14px;
@@ -98,16 +99,16 @@ h2 {
 .pull-left {
   float: left;
 }
+
 /*----------------------*/
+
 .wrapper {
   position: relative;
   min-width: 768px;
   max-width: 1200px;
   margin:0px auto;
   background-color: white;
-  -webkit-box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
-     -moz-box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
-          box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
 }
 /*----------HEADER------------*/
 .main-header {
@@ -120,8 +121,7 @@ h2 {
   margin: 0px;
   list-style: none; 
 } 
-/*240 = 20% от 1200
-240 = 22.7% от 1056(1056 = 1200 - 2*6%)*/
+
 .main-nav-li {
   width: 22.7%;
   line-height: 18px;
@@ -201,12 +201,6 @@ h2 {
   color: white;
   background-color: #81b3d2;
 }
-/*!!! Всё-равно есть сомнения на соответствие ТЗ
-
-— Фотографии, занимающие по две трети ширины вставляются так, чтобы обрезаться сверху и снизу при увеличении размера (ширина 66%, высота подстраивается под ширину, чтобы не нарушать пропорций, но фото не выходит за отведённую для него зону).
-
-?? что они имели в виду под словами "высота подстраивается под ширину"?  У нас сейчас высота картинки сандартна, а ширина под неё подстраивается: при увеличении горизонтального разрешения, выезжает область картинки, справа, которую не  было видно. Может надо сделать, чтобы было видно 100% ширины картинки, а высота обрезалась?
-*/
 
 .landscape-picture {
   position: absolute;   /*защита от переполнения контента*/
@@ -220,13 +214,11 @@ h2 {
 .landscape-1 .landscape-picture {
   right: 0;
   background-image:url("../img/landscape1-800x256.jpg");   
-  /*background-position: 100% center;*/
 }
 
 .landscape-2 .landscape-picture {
   left:0;
   background-image: url("../img/landscape2-800x256.jpg");
-  /*background-position: 0 center;*/
 }
 
 .landscape-description {
@@ -246,7 +238,6 @@ h2 {
 }
 
 .landscape p{
-  /*width:160px;*/
   margin: 0px auto;
 }
 /*----------FEATURES------------*/
@@ -277,6 +268,7 @@ h2 {
   padding-top: 40px;
   padding-bottom: 63px;
 }
+
 /*---------SEARCH FORM-------------*/
 
 
@@ -320,7 +312,6 @@ a.search-form-call {
 
   font-weight: bold;
   padding-top: 25px;
-  /*padding-bottom: 35px;*/
   text-decoration: none;
 }
 
@@ -334,9 +325,7 @@ a.search-form-call {
   text-align: left; 
   font-weight: bold;
   background-color: white;
-  -webkit-box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
-     -moz-box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
-          box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
+  box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
 
 }
 
@@ -346,16 +335,7 @@ a.search-form-call {
   90% {opacity: 0.7;}
   100% {opacity: 1;}
 }
-/*@keyframes bounce {
-0% { transform: translateY(-2000px); }
-70% { transform: translateY(30px); }
-90% { transform: translateY(-10px); }
-100% { transform: translateY(0); }
-}
-.modal-content-show {
-display: block;
-animation: bounce 0.6s;
-}*/
+
 
 .search-form-body.show {
   display: block;
@@ -387,13 +367,13 @@ animation: bounce 0.6s;
   position: relative;
 }
 
-/*почему саблайм не подсвечивает box-sizing?
-надо с префиксами его писать?*/
+
 .form-input input {
   box-sizing: border-box;
   height: 38px;
   width: 100%;
   padding-left: 10px;
+  padding-right: 35px;
   border: 2px solid #f2f2f2;
   background-color: #f2f2f2;
   outline: none;
@@ -401,7 +381,6 @@ animation: bounce 0.6s;
   font-weight: bold;
   text-transform: uppercase;
 }
-/*Почему текст вываливается при переполнении?*/
 .form-row-half {
   width: 50%;
   float: left;
@@ -416,55 +395,6 @@ animation: bounce 0.6s;
   padding-left: 50px; 
 }
 
-/*Вёрстка формы поиска на абсолютном позиционировании*/
-/*.form-row {
-  position: relative;
-  height: 38px;
-  width: 458px;
-  margin-bottom: 30px;
-}
-
-.form-row-half {
-  position: absolute;
-  width: 230px;
-  height: 38px;
-}
-.form-row-half:first-child {
-  left: 0;
-}
-
-.form-row-half:last-child {
-  right: 0;
-  width: 180px;
-}
-.form-description,
-.form-input {
-  position: absolute;
-  font-weight: bold; 
-}
-
-.form-description {
-  text-align: left;
-  left: 0;
-  margin-top: 7px;
-}
-
-.form-input {
-  right:0;
-}
-.form-input input {
-  width: 300px;
-  height: 34px;
-  margin: 0;
-  padding: 0 10px 0 30px;
-  border: 2px solid #f2f2f2;
-  background-color: #f2f2f2;
-  outline: none;
-
-  font-weight: bold;
-  text-transform: uppercase;
-}*/
-
 .form-input input:hover {
   border-color: #ebebeb;
   background-color: #ebebeb;
@@ -477,7 +407,7 @@ animation: bounce 0.6s;
 
 .form-row-half input {
   width: 114px;
-  padding: 0;
+  padding: 0 25px;
   text-align: center;
 }
 .form-icon {
@@ -538,10 +468,12 @@ animation: bounce 0.6s;
 /*-------------MAP----------------------*/
 .map {
  
-  /*height: 593px;*/
   background: #f2f1ef url("../img/map.jpg") center bottom;
 }
-
+.map iframe {
+  height: 593px;
+  width: 100%;
+}
 /*------------FOOTER--------------------*/
 
 [class*="-footer"] {
@@ -867,7 +799,7 @@ input[type="checkbox"]:checked + .filter-text::before {
   clear: both;
   display: table;
 }
-/*А можно мне тут их флоатить и распорку ставить, или надо классы присваивать, раз уж по всем страницам так делал?*/
+
 .item-img {
   float: left;
   margin-right: 30px;
