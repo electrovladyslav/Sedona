@@ -178,6 +178,15 @@ h2 {
   height: 512px;
   background: url('../img/start-img-bottom-shape.png') no-repeat 100% bottom,
               url('../img/start-img.jpg') no-repeat center -56px;
+  background-color: #B7D3E8;
+}
+
+.start-img-text {
+  display: block;
+  width: 458px;
+  height: 352px;
+  padding-top: 76px;
+  margin: 0 auto;
 }
 
 .intro {
@@ -470,9 +479,11 @@ a.search-form-call {
  
   background: #f2f1ef url("../img/map.jpg") center bottom;
 }
+
 .map iframe {
   height: 593px;
   width: 100%;
+  border: none;
 }
 /*------------FOOTER--------------------*/
 
@@ -494,14 +505,11 @@ a.search-form-call {
 
 
 
-.main-footer section,
-.hotels-footer section {
-  width: 33.33333%;
-  text-align: center;
-}
 
 .footer-hashtag {
   margin: 15px 0px 0px 0px;
+  width: 33.33333%;
+  text-align: center;
 }
 
 .footer-hashtag h2{
@@ -515,6 +523,8 @@ a.search-form-call {
 
 .footer-socials {
   font-size: 0;
+  width: 33.33333%;
+  text-align: center;
 }
 .social-btn {
   margin: 0 3px 0 3px;
@@ -530,6 +540,8 @@ a.search-form-call {
 
 .footer-copyright {
   margin-top: 5px;
+  width: 33.33333%;
+  text-align: center;
 }
 
 .copyright-text,
@@ -596,7 +608,6 @@ a.search-form-call {
   cursor: pointer;
 }
 
-
 .filter-column-small .filter-label:last-child {
   margin-bottom: 0;
 }
@@ -611,11 +622,19 @@ input[type="checkbox"] + .filter-text::before {
   cursor: pointer;
   font-size: 26px;
   line-height: 20px;
-  color: #fff;
+  color: #b5b5b5;
 }
 
 input[type="checkbox"]:checked + .filter-text::before {
   content: '\2611';
+}
+
+.filter-label:hover .filter-text::before {
+  color:#ffffff;
+}
+
+input[type="checkbox"]:disabled + .filter-text::before {
+  color: #6a6a6a;
 }
 
 /*=================RANGE-FILTER=======================*/

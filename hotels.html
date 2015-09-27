@@ -6,12 +6,13 @@
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link href="css/style.min.css" type="text/css" rel="stylesheet">
-    <title>Отели Седоны</title>
+    <meta name="description" content="Вёрстка второй страницы макета Sedona">
+    <title>Вёрстка 2 страницы макета Sedona</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="main-header">
+        <header class="main-header"><div></div>
             <nav class="main-navigation">
                 <ul class="clearfix">
                     <li class="main-nav-li pull-left"><a href="#">Информация</a></li>
@@ -40,7 +41,7 @@
                             <span class="filter-text">Парковка</span>
                         </label>
                         <label class="filter-label">
-                            <input type="checkbox" name="infrastructure[]" value="wifi">
+                            <input type="checkbox" name="infrastructure[]" value="wifi" checked disabled>
                             <span class="filter-text">Wi-Fi</span>
                         </label>
                     </div>
@@ -200,29 +201,23 @@
             </article>
         </main>
 
-       <footer class="hotels-footer">
-          <div class="container clearfix">
-              <section class="footer-hashtag pull-left">
-                  <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
-              </section>
-              <section class="footer-socials  pull-left">
-                   <a href="#" class="social-btn blue-btn"><span class="icon-twitter"></span></a>
-
-
-
-
-
-                                                                                                                          
-                  <a href="#" class="social-btn blue-btn"><span class="icon-facebook"></span></a>
-                  <a href="#" class="social-btn blue-btn"><span class="icon-youtube"></span></a>
-              </section>
-              <section class="footer-copyright  pull-left">
-                  <span class="copyright-text">website by</span>
-                  <a href="https://htmlacademy.ru" class="copyright-logo">
-                      
-                  </a>
-              </section>
-          </div>
+        <footer class="hotels-footer">
+            <div class="container clearfix">
+                <section class="footer-hashtag pull-left">
+                    <h2><a href="#" title="Hashtag">#visitsedona</a></h2>
+                </section>
+                <div class="footer-socials  pull-left">
+                     <a href="#" class="social-btn blue-btn"><span class="icon-twitter"></span></a>
+                    <a href="#" class="social-btn blue-btn"><span class="icon-facebook"></span></a>
+                    <a href="#" class="social-btn blue-btn"><span class="icon-youtube"></span></a>
+                </div>
+                <div class="footer-copyright  pull-left">
+                    <span class="copyright-text">design by</span>
+                    <a href="https://htmlacademy.ru" class="copyright-logo">HTML ACADEMY
+                        
+                    </a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

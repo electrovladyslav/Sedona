@@ -19,3 +19,5 @@ I'm studying at <a href="https://htmlacademy.ru">HTML Academy</a>
 15.08 Added js scrip for improve usabillity. Added interactive google map.
 
 19.08 Corrected font sizies and positions of element s on page by Pixel Perfect.
+
+27.08 Project was checked and after correction, this is final version. Score 100%))
