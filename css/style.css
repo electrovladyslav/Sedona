@@ -110,6 +110,53 @@ h2 {
   background-color: white;
   box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
 }
+/*----------POPUP--------------*/
+
+.popup {
+  position: absolute;
+
+  left: 0;
+  top: 52px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(160, 160, 160, 0.6); 
+  
+
+}
+.popup_text {
+  padding: 5px 10px;
+  text-align: justify;
+  color: rgb(230, 230, 230);
+}
+
+.popup .btn_close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(160, 160, 160);
+}
+
+/*@keyframes popupFading {
+  0% {opacity: 0;}
+  50% {opacity: 0.5;}
+  90% {opacity: 0.7;}
+  100% {opacity: 0.9;}
+}
+*/
+.popup.faded {
+  display: none;
+  /*opacity: 0.9;
+  animation: popupFading 0.5s;*/
+}
 /*----------HEADER------------*/
 .main-header {
   padding: 20px 6% 15px 6%;
@@ -280,7 +327,6 @@ h2 {
 
 /*---------SEARCH FORM-------------*/
 
-
 .search-form {
   padding-top: 45px;
   text-align: center;
@@ -292,7 +338,6 @@ h2 {
   line-height: 36px;
   margin-top: 0px;
   margin-bottom: 25px;
-
 }
 
 .search-form-title {
@@ -300,8 +345,6 @@ h2 {
 }
 
 .search-form-block {
-  
- 
   background-color: white;
 }
 
@@ -504,8 +547,6 @@ a.search-form-call {
 }
 
 
-
-
 .footer-hashtag {
   margin: 15px 0px 0px 0px;
   width: 33.33333%;
@@ -521,6 +562,30 @@ a.search-form-call {
   color:black;
 }
 
+/*
+.footer-produced {
+  margin: 15px 0px 0px 0px;
+  width: 33.33333%;
+  text-align: center;
+}
+
+.produced-text,
+.produced-name,
+.produced-year
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;  
+  } 
+
+a.produced-name  {
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.5em;
+  color:black;
+}
+  
+*/
 .footer-socials {
   font-size: 0;
   width: 33.33333%;
