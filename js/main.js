@@ -9,6 +9,9 @@ var formShowState = localStorage.getItem('formShowState');
 var dateEnterStored = localStorage.getItem('dateEnter');
 var dateExitStored = localStorage.getItem('dateExit');
 
+var popup = document.querySelector('.popup');
+var popupBtnClose = popup.querySelector('.btn_close');
+
 //показать форму, если она была показана в последний визит
 if (formShowState)
     formBody.classList.toggle('show');
@@ -75,9 +78,13 @@ form.addEventListener('submit', function (event) {
         localStorage.setItem('dateEnter',dateEnter.value);
         localStorage.setItem('dateExit',dateExit.value);
     }
-
-
 })
 
+
+popupBtnClose.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    popup.classList.toggle('faded');
+})
 
 
