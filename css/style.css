@@ -19,38 +19,38 @@
   }
 }
 */
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "symbols-sedona";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+
 .icon-facebook:before { content: '\66'; } /* 'f' */
 .icon-twitter:before { content: '\74'; } /* 't' */
 .icon-up-dir:before { content: '\25b2'; } /* '▲' */
@@ -111,7 +111,7 @@ h2 {
   box-shadow: 0 5px  15px rgba(0, 1, 1, 0.2);
 }
 /*----------POPUP--------------*/
-
+/*
 .popup {
   position: absolute;
 
@@ -120,8 +120,8 @@ h2 {
   width: 300px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: rgba(160, 160, 160, 0.6); 
-  
+  background-color: rgba(160, 160, 160, 0.6);
+
 
 }
 .popup_text {
@@ -144,7 +144,12 @@ h2 {
   vertical-align: middle;
   background-color: rgb(160, 160, 160);
 }
-
+.popup.faded {
+  display: none;
+  /*opacity: 0.9;
+  animation: popupFading 0.5s;
+}
+*/
 /*@keyframes popupFading {
   0% {opacity: 0;}
   50% {opacity: 0.5;}
@@ -152,11 +157,7 @@ h2 {
   100% {opacity: 0.9;}
 }
 */
-.popup.faded {
-  display: none;
-  /*opacity: 0.9;
-  animation: popupFading 0.5s;*/
-}
+
 /*----------HEADER------------*/
 .main-header {
   padding: 20px 6% 15px 6%;
@@ -166,8 +167,8 @@ h2 {
 .main-header ul {
   padding: 0px;
   margin: 0px;
-  list-style: none; 
-} 
+  list-style: none;
+}
 
 .main-nav-li {
   width: 22.7%;
@@ -206,6 +207,16 @@ h2 {
 
 .main-navigation a.active:active {
   color: #d6d0cc;
+}
+/*Заглушка для нерабочих ссылок*/
+.main-navigation a.disabled,
+.main-navigation a.disabled:hover,
+.main-navigation a.disabled:active,
+.main-navigation a.disabled.active,
+.main-navigation a.disabled.active:hover,
+.main-navigation a.disabled.active:active {
+  color: #d6d0cc;
+  cursor: default;
 }
 
 .top-logo {
@@ -264,12 +275,12 @@ h2 {
   bottom: 0;
   width: 67%;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover;
 }
 
 .landscape-1 .landscape-picture {
   right: 0;
-  background-image:url("../img/landscape1-800x256.jpg");   
+  background-image:url("../img/landscape1-800x256.jpg");
 }
 
 .landscape-2 .landscape-picture {
@@ -371,10 +382,10 @@ a.search-form-call {
   position: absolute;
   display: none;
   left: 50%;
-  margin-left: -284px; 
+  margin-left: -284px;
   width: 458px;
   padding: 55px;
-  text-align: left; 
+  text-align: left;
   font-weight: bold;
   background-color: white;
   box-shadow: 0 7px  15px rgba(0, 1, 1, 0.15);
@@ -444,7 +455,7 @@ a.search-form-call {
 
 .form-description-short {
   width: 48px;
-  padding-left: 50px; 
+  padding-left: 50px;
 }
 
 .form-input input:hover {
@@ -519,7 +530,7 @@ a.search-form-call {
 }
 /*-------------MAP----------------------*/
 .map {
- 
+
   background: #f2f1ef url("../img/map.jpg") center bottom;
 }
 
@@ -542,7 +553,7 @@ a.search-form-call {
   bottom: 0;
   /*футер лежит поверх карты*/
   z-index: 1;
-  
+
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -575,8 +586,8 @@ a.search-form-call {
 {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 5px;  
-  } 
+  margin-right: 5px;
+  }
 
 a.produced-name  {
   padding: 10px 0;
@@ -584,7 +595,7 @@ a.produced-name  {
   font-size: 1.5em;
   color:black;
 }
-  
+
 */
 .footer-socials {
   font-size: 0;
@@ -623,7 +634,7 @@ a.produced-name  {
   background: url("../img/logo-sprite.png") no-repeat;
   background-position: -5px -5px;
   text-decoration: none;
-} 
+}
 
 .copyright-logo:hover {
   background-position: -251px -5px;
@@ -651,7 +662,7 @@ a.produced-name  {
 .filter-column-small {
   width: 16%;
   margin-right: 8%;
-  
+
 }
 .filter-title {
   font-size: 16px;
@@ -710,7 +721,7 @@ input[type="checkbox"]:disabled + .filter-text::before {
 }
 
 .filter-column-right  h2{
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .price-controls {
@@ -733,7 +744,7 @@ input[type="checkbox"]:disabled + .filter-text::before {
 
 .price-controls label:last-child {
   border-left: 2px solid #fff;
-} 
+}
 .price-controls input {
   width: 50%;
   background: none;
@@ -888,7 +899,7 @@ input[type="checkbox"]:disabled + .filter-text::before {
   float: left;
   margin-right: 30px;
   width: 135px;
-  height: 90px; 
+  height: 90px;
   background-color: #618ab2;
 }
 .item-img img {
@@ -905,7 +916,7 @@ input[type="checkbox"]:disabled + .filter-text::before {
   margin-bottom: 45px;
   font-size: 0;
   text-align: right;
-}  
+}
 
 .icon-star {
   font-size: 19px;
@@ -920,10 +931,10 @@ input[type="checkbox"]:disabled + .filter-text::before {
   background-color: #f2f2f2;
 }
 .item-info {
-  overflow: hidden;  
+  overflow: hidden;
 }
 
-.item-title, 
+.item-title,
 .item-info p {
   margin: 0px;
   margin-bottom: 10px;

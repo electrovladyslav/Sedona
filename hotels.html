@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link href="css/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <meta name="description" content="Вёрстка второй страницы макета Sedona">
     <title>Вёрстка 2 страницы макета Sedona</title>
 </head>
@@ -15,12 +15,12 @@
         <header class="main-header"><div></div>
             <nav class="main-navigation">
                 <ul class="clearfix">
-                    <li class="main-nav-li pull-left"><a href="#">Информация</a></li>
-                    <li class="main-nav-li pull-left"><a href="#">Фото и видео</a></li> 
-                    <li class="main-nav-li pull-right"><a href="hotels.html" class="active">Гостиницы</a></li>
-                    <li class="main-nav-li pull-right"><a href="#">Карта штата</a></li>
+                    <li class="main-nav-li pull-left"><a class="disabled" href="#">Информация</a></li>
+                    <li class="main-nav-li pull-left"><a class="disabled" href="#">Фото и видео</a></li>
+                    <li class="main-nav-li pull-right"><a class="active" href="hotels.html">Гостиницы</a></li>
+                    <li class="main-nav-li pull-right"><a class="disabled" href="#">Карта штата</a></li>
                 </ul>
-            
+
                 <a href="index.html" class="top-logo" title="Главная">
                     <img src="img/top-logo.png" alt="Sedona top logo" height="70" width="138">
                 </a>
@@ -29,7 +29,7 @@
         <main class="hotels-content">
             <article class="hotels-filter">
                 <form action="https://echo.htmlacademy.ru" method="get" class="clearfix">
-                    
+
                     <div class="filter-column-small filter-column-left pull-left">
                         <h2 class="filter-title">Инфраструктура:</h2>
                         <label class="filter-label">
@@ -45,7 +45,7 @@
                             <span class="filter-text">Wi-Fi</span>
                         </label>
                     </div>
-                   
+
                     <div class="filter-column-small filter-column-center pull-left">
                         <h2 class="filter-title">Тип жилья:</h2>
                         <label class="filter-label">
@@ -61,12 +61,12 @@
                             <span class="filter-text">Апартаменты</span>
                         </label>
                     </div>
-                    
+
                     <div class="filter-column-right range-filter pull-right">
                         <h2 class="filter-title">Стоимость в сутки (р):</h2>
                         <div class="price-controls">
                             <label class="min-price">от <input name="min-price" type="text" value="0"></label>
-                            
+
                             <label class="max-price">до <input name="max-price" type="text" value="3000"></label>
                         </div>
                         <div class="range-controls">
@@ -76,7 +76,7 @@
                             <div class="toggle toggle-min"></div>
                             <div class="toggle toggle-max"></div>
                         </div>
-                    
+
                         <div class="filter-call">
                             <input type="submit" value="Показать">
                         </div>
@@ -106,7 +106,7 @@
                         <a href="#" class="sorting-btn sorting-rating">По рейтингу</a>
                     </div>
                 </section>
-                
+
 
                 <section class="results-content">
                     <div class="results-item">
@@ -214,7 +214,7 @@
                 <div class="footer-copyright  pull-left">
                     <span class="copyright-text">design by</span>
                     <a href="https://htmlacademy.ru" class="copyright-logo">HTML ACADEMY
-                        
+
                     </a>
                 </div>
             </div>

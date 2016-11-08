@@ -9,8 +9,9 @@ var formShowState = localStorage.getItem('formShowState');
 var dateEnterStored = localStorage.getItem('dateEnter');
 var dateExitStored = localStorage.getItem('dateExit');
 
-var popup = document.querySelector('.popup');
+/*var popup = document.querySelector('.popup');
 var popupBtnClose = popup.querySelector('.btn_close');
+*/
 
 //показать форму, если она была показана в последний визит
 if (formShowState)
@@ -29,7 +30,7 @@ formBtn.addEventListener('click', function  (event) {
 
     formBody.classList.toggle('show');
     //сохранить состояние в localStorage
-    if (formBody.classList.contains('show')) 
+    if (formBody.classList.contains('show'))
         localStorage.setItem('formShowState', 'true')
     else
         localStorage.removeItem('formShowState');
@@ -49,7 +50,7 @@ for (var i = 0; i < increaseBtn.length; i++) {
             event.preventDefault();
             var inputVal = decreaseBtn[i].nextElementSibling.value;
             inputVal --;
-            if (inputVal < 0) 
+            if (inputVal < 0)
                 inputVal = 0;
             decreaseBtn[i].nextElementSibling.value = inputVal;
         });
@@ -60,7 +61,7 @@ for (var i = 0; i < increaseBtn.length; i++) {
 form.addEventListener('submit', function (event) {
     if (!(dateEnter.value && dateExit.value)){
         event.preventDefault();
-        
+
         if (!dateEnter.value) {
             dateEnter.style.border = '1px solid red'
             alert('Введите дату заезда');
@@ -70,7 +71,7 @@ form.addEventListener('submit', function (event) {
             if (!dateExit.value) {
                 dateExit.style.border = '1px solid red'
                 alert('Введите дату выезда');
-            } else 
+            } else
                 dateExit.style.border = '';
         }
     //если всё ок, сохраним даты в localStorage
@@ -80,11 +81,11 @@ form.addEventListener('submit', function (event) {
     }
 })
 
-
+/*
 popupBtnClose.addEventListener('click', function (event) {
     event.preventDefault();
 
     popup.classList.toggle('faded');
 })
 
-
+*/
